@@ -3,8 +3,8 @@
 import { BindingKey } from '@loopback/context';
 import { PasswordHasher } from './services/hash.password.bcryptjs';
 import { TokenService, UserService } from '@loopback/authentication';
-import { HospitalUser } from './models';
-import { Credentials } from './repositories';
+import { HospitalUser, CompanyUser } from './models';
+import { Credentials } from './repositories/credentials-Interface';
 
 export namespace TokenServiceConstants {
   export const TOKEN_SECRET_VALUE = 'myjwts3cr3t';
@@ -31,7 +31,7 @@ export namespace PasswordHasherBindings {
 }
 
 export namespace UserServiceBindings {
-  export const USER_SERVICE = BindingKey.create<UserService<HospitalUser, Credentials>>(
+  export const USER_SERVICE = BindingKey.create<UserService<HospitalUser | CompanyUser, Credentials>>(
     'services.user.service',
   );
 }
