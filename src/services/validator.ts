@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import { Credentials } from '../repositories/hospital-user.repository';
+import { Credentials } from '../repositories/credentials-Interface';
 import * as isemail from 'isemail';
 import { HttpErrors } from '@loopback/rest';
 

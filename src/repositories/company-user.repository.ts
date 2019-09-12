@@ -1,16 +1,16 @@
 import { DefaultCrudRepository } from '@loopback/repository';
-import { HospitalUser, HospitalUserRelations } from '../models';
+import { CompanyUser, CompanyUserRelations } from '../models';
 import { ETenderingDatabaseDataSource } from '../datasources';
 import { inject } from '@loopback/core';
 
-export class HospitalUserRepository extends DefaultCrudRepository<
-  HospitalUser,
-  typeof HospitalUser.prototype._id,
-  HospitalUserRelations
+export class CompanyUserRepository extends DefaultCrudRepository<
+  CompanyUser,
+  typeof CompanyUser.prototype._id,
+  CompanyUserRelations
   > {
   constructor(
     @inject('datasources.eTenderingDatabase') dataSource: ETenderingDatabaseDataSource,
   ) {
-    super(HospitalUser, dataSource);
+    super(CompanyUser, dataSource);
   }
 }

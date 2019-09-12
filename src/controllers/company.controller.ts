@@ -1,4 +1,3 @@
-
 import {
   post, param, get, requestBody, HttpErrors,
   getFilterSchemaFor,
@@ -16,8 +15,6 @@ import {
   Where,
 } from '@loopback/repository';
 import { validateCredentials } from '../services/validator';
-import { HospitalUser } from '../models';
-import { HospitalUserRepository } from '../repositories';
 import { inject } from '@loopback/core';
 import {
   authenticate,
@@ -39,27 +36,29 @@ import {
 } from '../keys';
 
 const _ = require('lodash');
+import { CompanyUser } from '../models';
+import { CompanyUserRepository } from '../repositories';
 
+export class CompanyController {
 
-export class HospitalUserController {
   constructor(
-    @repository(HospitalUserRepository) public userRepository: HospitalUserRepository,
+    @repository(CompanyUserRepository) public userRepository: CompanyUserRepository,
     @inject(PasswordHasherBindings.PASSWORD_HASHER)
     public passwordHasher: PasswordHasher,
     @inject(TokenServiceBindings.TOKEN_SERVICE)
     public jwtService: TokenService,
     @inject(UserServiceBindings.USER_SERVICE)
-    public userService: UserService<HospitalUser, Credentials>,
+    public userService: UserService<CompanyUser, Credentials>,
   ) { }
 
-  @del('/hospital-users/{id}', {
+  @del('/company-users/{id}', {
     responses: {
       '204': {
         description: 'User DELETE success',
       },
     },
   })
-  async deleteById(@param.path.string('id') id: string): Promise<HospitalUser> {
+  async deleteById(@param.path.string('id') id: string): Promise<CompanyUser> {
     let usr = this.userRepository.findById(id, {
       fields: { password: false },
     });
@@ -67,7 +66,7 @@ export class HospitalUserController {
     return usr;
   }
 
-  @patch('/hospital-users', {
+  @patch('/company-users', {
     responses: {
       '200': {
         description: 'User PATCH success count',
@@ -79,33 +78,33 @@ export class HospitalUserController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(HospitalUser, { partial: true }),
+          schema: getModelSchemaRef(CompanyUser, { partial: true }),
         },
       },
     })
-    user: HospitalUser,
-    @param.query.object('where', getWhereSchemaFor(HospitalUser)) where?: Where<HospitalUser>,
+    user: CompanyUser,
+    @param.query.object('where', getWhereSchemaFor(CompanyUser)) where?: Where<CompanyUser>,
   ): Promise<Count> {
     return this.userRepository.updateAll(user, where);
   }
 
-  @post('/hospital-users', {
+  @post('/company-users', {
     responses: {
       '200': {
         description: 'User',
-        content: { 'application/json': { schema: getModelSchemaRef(HospitalUser) } },
+        content: { 'application/json': { schema: getModelSchemaRef(CompanyUser) } },
       },
     },
   })
   async create(@requestBody({
     content: {
       'application/json': {
-        schema: getModelSchemaRef(HospitalUser),
+        schema: getModelSchemaRef(CompanyUser),
       },
     },
   })
-  user: HospitalUser,
-  ): Promise<HospitalUser> {
+  user: CompanyUser,
+  ): Promise<CompanyUser> {
     // ensure a valid email value and password value
     validateCredentials(_.pick(user, ['email', 'password']));
 
@@ -129,7 +128,7 @@ export class HospitalUserController {
     }
   }
 
-  @get('/hospital-users/count', {
+  @get('/company-users/count', {
     responses: {
       '200': {
         description: 'User model count',
@@ -138,60 +137,60 @@ export class HospitalUserController {
     },
   })
   async count(
-    @param.query.object('where', getWhereSchemaFor(HospitalUser)) where?: Where<HospitalUser>,
+    @param.query.object('where', getWhereSchemaFor(CompanyUser)) where?: Where<CompanyUser>,
   ): Promise<Count> {
     return this.userRepository.count(where);
   }
 
 
 
-  @get('/hospital-users/{userId}', {
+  @get('/company-users/{userId}', {
     responses: {
       '200': {
         description: 'User',
         content: {
           'application/json': {
             schema: {
-              'x-ts-type': HospitalUser,
+              'x-ts-type': CompanyUser,
             },
           },
         },
       },
     },
   })
-  async findById(@param.path.string('userId') userId: string): Promise<HospitalUser> {
+  async findById(@param.path.string('userId') userId: string): Promise<CompanyUser> {
     return this.userRepository.findById(userId, {
       fields: { password: false },
     });
   }
 
-  @get('/hospital-users', {
+  @get('/company-users', {
     responses: {
       '200': {
         description: 'Array of User model instances',
         content: {
           'application/json': {
-            schema: { type: 'array', items: getModelSchemaRef(HospitalUser) },
+            schema: { type: 'array', items: getModelSchemaRef(CompanyUser) },
           },
         },
       },
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(HospitalUser)) filter?: Filter<HospitalUser>,
-  ): Promise<HospitalUser[]> {
+    @param.query.object('filter', getFilterSchemaFor(CompanyUser)) filter?: Filter<CompanyUser>,
+  ): Promise<CompanyUser[]> {
 
     return this.userRepository.find(filter);
   }
 
 
-  @get('/hospital-users/me', {
+  @get('/company-users/me', {
     responses: {
       '200': {
         description: 'The current user profile',
         content: {
           'application/json': {
-            schema: { type: 'array', items: getModelSchemaRef(HospitalUser) },
+            schema: { type: 'array', items: getModelSchemaRef(CompanyUser) },
           },
         },
       },
@@ -208,7 +207,7 @@ export class HospitalUserController {
 
 
 
-  @post('/hospital-users/login', {
+  @post('/company-users/login', {
     responses: {
       '200': {
         description: 'Token',
@@ -231,7 +230,7 @@ export class HospitalUserController {
     @requestBody(CredentialsRequestBody) credentials: Credentials,
   ): Promise<{ token: string }> {
     // ensure the user exists, and the password is correct
-    const user = await this.userService.verifyCredentials('hospital', credentials);
+    const user = await this.userService.verifyCredentials('company', credentials);
 
     // convert a User object into a UserProfile object (reduced set of properties)
     const userProfile = this.userService.convertToUserProfile(user);
@@ -243,7 +242,7 @@ export class HospitalUserController {
   }
 
 
-  @post('/hospital-users/login', {
+  @post('/company-users/login', {
     responses: {
       '200': {
         description: 'Token',
@@ -266,7 +265,7 @@ export class HospitalUserController {
     @requestBody(CredentialsRequestBody) credentials: Credentials,
   ): Promise<{ token: string }> {
     // ensure the user exists, and the password is correct
-    const user = await this.userService.verifyCredentials('hospital', credentials);
+    const user = await this.userService.verifyCredentials('company', credentials);
 
     // convert a User object into a UserProfile object (reduced set of properties)
     const userProfile = this.userService.convertToUserProfile(user);
@@ -280,10 +279,10 @@ export class HospitalUserController {
 
 
 
-  @patch('/hospital-users/{id}', {
+  @patch('/company-users/{id}', {
     responses: {
       '204': {
-        description: 'HospitalUser PATCH success',
+        description: 'CompanyUser PATCH success',
       },
     },
   })
@@ -292,28 +291,27 @@ export class HospitalUserController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(HospitalUser, { partial: true }),
+          schema: getModelSchemaRef(CompanyUser, { partial: true }),
         },
       },
     })
-    hospitalUser: HospitalUser,
+    companyUser: CompanyUser,
   ): Promise<void> {
-    await this.userRepository.updateById(id, hospitalUser);
+    await this.userRepository.updateById(id, companyUser);
   }
 
-  @put('/hospital-users/{id}', {
+  @put('/company-users/{id}', {
     responses: {
       '204': {
-        description: 'HospitalUser PUT success',
+        description: 'CompanyUser PUT success',
       },
     },
   })
   async replaceById(
     @param.path.string('id') id: string,
-    @requestBody() hospitalUser: HospitalUser,
+    @requestBody() companyUser: CompanyUser,
   ): Promise<void> {
-    await this.userRepository.replaceById(id, hospitalUser);
+    await this.userRepository.replaceById(id, companyUser);
   }
-
 
 }
