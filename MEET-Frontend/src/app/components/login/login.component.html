@@ -24,17 +24,15 @@
                     <form class=" text">
                         <div class="form-group ">
 
-                            <input type="email" class="form-control"  #CEmail (focusout)="onEnterEmail(CEmail.value)" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control"  #CEmail aria-describedby="emailHelp" placeholder="Enter email">
 
                         </div>
                         <div class="form-group ">
-                            <input type="password" class="form-control" #CPassword (focusout)="onEnterPass(CPassword.value)"  placeholder="Password">
+                            <input type="password" class="form-control" #CPassword placeholder="Password">
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input">
-                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                        </div>
-                        <button  type="button" (click)="Submit()" class="btn btn-primary login">Login</button>
+                        
+                        <button  type="button" (click)="companySubmit($event)" class="btn btn-primary login">Login</button>
+                
                     </form>
                 </div>
             </div>

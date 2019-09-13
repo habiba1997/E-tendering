@@ -1,4 +1,4 @@
-import { Component, OnInit , ElementRef, Renderer2} from '@angular/core';
+import { Component, OnInit , ElementRef, Renderer2, ViewChild} from '@angular/core';
 import { NgStyle } from '@angular/common';
 import { User } from 'src/app/CustomData.ts/User';
 import { DataServiceService } from 'src/app/Service/data-service.service';
@@ -11,14 +11,15 @@ import { DataServiceService } from 'src/app/Service/data-service.service';
 export class LoginComponent implements OnInit {
 
   constructor(private UserDataService:DataServiceService) {
-    console.log('hi');
   }
+
+
+  IP:string ="localhost:3000"
   user:User= new User();
+  @ViewChild("CEmail",{static: false}) CEmail: ElementRef;
+  @ViewChild("CPassword",{static: false}) CPassword: ElementRef;
 
   ngOnInit() {
-    console.log('hello');
-
-
     function Start() {
 
           (document.querySelector('.word') as HTMLElement).style.marginTop = 40 + 'px';
@@ -82,6 +83,27 @@ Submit(){
   }
   
 }
+dataLogin()
+{
+  return {
+    "email": this.CEmail.nativeElement.value,
+    "password": this.CPassword.nativeElement.value
+  };
+
+}
+
+  public Data=[]; 
+
+  companySubmit(args)
+  {
+    console.log("Start");
+    const Url = "http://localhost:3000/company-users";
+    this.UserDataService.CLogin();
+    console.log("Done");
+    //console.log(this.Data[0]);
+
+    
+  }
 
 
 
