@@ -1,0 +1,5 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: cizel;
+    src: url(assets/fonts/Cinzel/Cinzel-Regular.ttf) format("opentype");
+  }

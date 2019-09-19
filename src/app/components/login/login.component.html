@@ -1,0 +1,149 @@
+<div class="frame ">
+    <div>
+        <div class=" blocks block1 ">
+            <div class="card card1">
+                <div class=" face front">
+                    <div class=" jumbotron-fluid bg-dark">
+
+                        <div class="jumbotron-background">
+                            <img src="assets/login_pics/company.jpg" class="image" alt="Responsive image">
+                        </div>
+
+                        <div class="container text-white">
+
+                            <p class="display-4">Company</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="face back">
+                    <div>
+                        <img src="assets/login_pics/company.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <form class=" text">
+                        <div class="form-group ">
+
+                            <input type="email" class="form-control"  #CompanyEmail aria-describedby="emailHelp" placeholder="Enter email">
+
+                        </div>
+                        <div class="form-group ">
+                            <input type="password" class="form-control" #CompanyPassword placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                        <button  type="button" (click)="companySubmit(CompanyEmail.value,CompanyPassword.value)" class="btn btn-primary login">Login</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="blocks block2">
+            <div class="card card2">
+                <div class=" face front">
+                    <div class=" jumbotron-fluid bg-dark">
+
+                        <div class="jumbotron-background">
+                            <img src="assets/login_pics/hospital.png" class="image" alt="Responsive image">
+                        </div>
+
+                        <div class="container text-white">
+
+                            <p class="display-4">Hospital</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="face back">
+                    <div>
+                        <img src="assets/login_pics/hospital.png" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <form class=" text">
+                        <div class="form-group ">
+                            <input type="email" #HEmail (focusout)="onEnterEmail(HEmail.value)" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+
+                        </div>
+                        <div class="form-group ">
+                            <input type="password" #HPassword (focusout)="onEnterPass(HPassword.value)" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                        <button type="button" (click)="Submit()"  class="btn btn-primary login">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="blocks block3">
+            <div class="card card3">
+                <div class=" face front">
+                    <div class=" jumbotron-fluid bg-dark">
+
+                        <div class="jumbotron-background">
+                            <img src="assets/login_pics/admin.jpg" class="image" alt="Responsive image">
+                        </div>
+
+                        <div class="container text-white">
+
+                            <p class="display-4">Admin</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="face back">
+                    <div>
+                        <img src="assets\login_pics\admin.jpg" class="img-fluid" alt="Responsive image">
+                    </div>
+                    <form class=" text">
+                        <div class="form-group ">
+                            <input type="email" class="form-control"  #AEmail (focusout)="onEnterEmail(AEmail.value)"  aria-describedby="emailHelp" placeholder="Enter email">
+
+                        </div>
+                        <div class="form-group ">
+                            <input type="password" class="form-control"  #APassword (focusout)="onEnterPass(APassword.value)"  placeholder="Password">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+                        <button  type="button" (click)="Submit()" class="btn btn-primary login">Login</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="word" title="Medical Equipment Electronic Tendering">
+            <div class="nn">
+                <div class="light left"></div>
+                <div class="light middle"></div>
+                <div class="light middle2"></div>
+                <div class="light right"></div>
+            </div>
+            <div class="ee">
+                <div class="light left"></div>
+                <div class="light top"></div>
+                <div class="light middle"></div>
+                <div class="light bottom"></div>
+            </div>
+            <div class="ee ee2">
+                <div class="lightj left"></div>
+                <div class="light top"></div>
+                <div class="light middle"></div>
+                <div class="light bottom"></div>
+            </div>
+            <div class="dd">
+                <div class="light left"></div>
+                <div class="light top"></div>
+    
+                </div>
+    
+    
+            </button>
+    </div>
+
+</div>
