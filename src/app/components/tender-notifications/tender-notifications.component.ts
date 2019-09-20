@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tender } from 'src/app/CustomData.ts/User';
+import { HttpService } from 'src/app/Services/http-service.service';
 
 @Component({
   selector: 'app-tender-notifications',
@@ -6,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tender-notifications.component.css']
 })
 export class TenderNotificationsComponent implements OnInit {
-  array:number[];
-  constructor() {
-    this.array=[0,1,2,3,4];
+  tenders:Tender[];
+  constructor(private TenderHttpService: HttpService) {
+    this.tenders=this.TenderHttpService.getTenders();
+
+    
    }
 
   ngOnInit() {

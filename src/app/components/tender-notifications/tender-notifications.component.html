@@ -1,21 +1,31 @@
-<div *ngFor="let item of array; let i = index">
+<div *ngFor="let item of tenders; let i = index">
     <div class="profile-frame">
-    
-        <div class="container-fluid">
-        <div class="row ">
-        
-            <div class="col-md-3 col-sm-12  align-self-sm-center ">
+            <div class="col-12 del">
+                    <button  (click)="delete(todo)" class="xb">X</button>
 
             </div>
-            <div class="col-md-9 col-sm-12 align-self-center">
-                <h1 class="text-center profile-headline">Tender</h1>
+        <div class="container-fluid">
+        <div class="row ">        
+            <div class="col-md-2 col-sm-auto  align-self-sm-center ">
+                    <img class="rounded-circle circle " src="assets/login_pics/hospital.png">
+                    
+            </div>
+            <div class="col-md-9 col-sm-auto ">
+                <h4 class="Tender-headline">Tender Pushed from {{item.HospitalName}}</h4>
+                <span class ="Tender-info">
+                        {{item.HospitalName}} has pushed tender for {{item.DeviceName}} on {{item.Date}}
+                </span>
+                
         
             </div>
+           
             
             
         </div>
+
         </div>
-    </div>
+        
+        </div>
     
     
     

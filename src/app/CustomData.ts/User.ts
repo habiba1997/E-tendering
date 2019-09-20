@@ -17,3 +17,9 @@ export class UserNoPass{
     email: string;
     
 }  
+
+export class Tender{
+    HospitalName:string;
+    DeviceName:string;
+    Date:string;
+}
