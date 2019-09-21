@@ -1,7 +1,7 @@
 <div *ngFor="let item of tenders; let i = index">
     <div class="profile-frame">
             <div class="col-12 del">
-                    <button  (click)="delete(todo)" class="xb">X</button>
+                    <button  (click)="delete(item)" class="xb">X</button>
 
             </div>
         <div class="container-fluid">
@@ -10,14 +10,36 @@
                     <img class="rounded-circle circle " src="assets/login_pics/hospital.png">
                     
             </div>
-            <div class="col-md-9 col-sm-auto ">
+            <div class="col-md-6 col-sm-auto ">
                 <h4 class="Tender-headline">Tender Pushed from {{item.HospitalName}}</h4>
                 <span class ="Tender-info">
-                        {{item.HospitalName}} has pushed tender for {{item.DeviceName}} on {{item.Date}}
+                        {{item.HospitalName}} has pushed tender for {{item.DeviceName}} 
                 </span>
                 
         
             </div>
+            <div class="col-2 col-sm-auto date-cell "> 
+                   <div class="tender-info-name">
+                       <span>Start</span>
+                   </div>
+                    <div class="Data-info-value">
+                            
+                            <span>{{item.Date}}</span>
+                        </div>
+                        
+                
+            </div>
+            <div class="col-2 col-sm-auto date-cell "> 
+                    <div class="tender-info-name">
+                        <span>End</span>
+                    </div>
+                     <div class="Data-info-value">
+                             
+                             <span>{{item.Date}}</span>
+                         </div>
+                         
+                 
+             </div>
            
             
             

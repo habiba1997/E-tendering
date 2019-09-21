@@ -22,4 +22,5 @@ export class Tender{
     HospitalName:string;
     DeviceName:string;
     Date:string;
+    id:number;
 }

@@ -17,5 +17,8 @@ export class TenderNotificationsComponent implements OnInit {
 
   ngOnInit() {
   }
+  delete(noti:Tender){
+    this.tenders=this.tenders.filter(t => t.id !== noti.id)
+  }
 
 }
