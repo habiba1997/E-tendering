@@ -6,13 +6,17 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
 import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { TenderFormComponent } from './components/tender-form/tender-form.component';
+import { DiathermyFormComponent } from './components/tender-form/diathermy-form/diathermy-form.component';
+import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
 
 
 
 const appRoutes: Routes = [
-    
+    { path: "tender-form", component: TenderFormComponent },
+
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
     
@@ -59,5 +63,13 @@ const appRoutes: Routes = [
 export class AppRoutingModule { }
 export const RoutingComponents = [ 
     LoginComponent,
+    PageNotFoundComponent,
+    TenderNotificationsComponent,
+    NavBarComponent,TenderFormComponent,
+    CompanyProfileComponent,
+    TenderFormComponent,
+    DiathermyFormComponent,
+    UltrasoundFormComponent,
+    DirectRequestsComponent
    
   ];

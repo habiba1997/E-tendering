@@ -6,6 +6,7 @@ import { UserNoPass, tender, CompanyTenders, TenderFile_Id } from '../CustomData
 )
 export class DataCommunicationService {
 
+    
     private dataObjectSource = new BehaviorSubject(new UserNoPass);
     dataObject = this.dataObjectSource.asObservable();
     private tenderObjectSource=new BehaviorSubject(new CompanyTenders );

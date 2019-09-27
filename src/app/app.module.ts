@@ -3,18 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, RoutingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-
-import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
-//import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { HttpService } from './Services/http-service.service';
 import { DataCommunicationService } from './Services/data-Comunication.service';
 import { NavigationService } from './Services/navigation.service';
-import { LoginComponent } from './components/login/login.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
-import { TenderFileComponent } from './components/tender-file/tender-file.component';
+import { DataService } from './Services/data.service'
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,23 +16,17 @@ import { TenderFileComponent } from './components/tender-file/tender-file.compon
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    CompanyProfileComponent,
     RoutingComponents,
-    PageNotFoundComponent,
-    TenderNotificationsComponent,
-    NavBarComponent,
-    DirectRequestsComponent,
-    TenderFileComponent
   
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     
   ],
-  providers: [HttpService,DataCommunicationService, NavigationService],
+  providers: [HttpService,DataService,DataCommunicationService, NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
