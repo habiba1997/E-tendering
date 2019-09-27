@@ -6,6 +6,7 @@ import { UserNoPass } from '../CustomData.ts/User';
 )
 export class DataCommunicationService {
 
+    
     private dataObjectSource = new BehaviorSubject(new UserNoPass);
 
     dataObject = this.dataObjectSource.asObservable();

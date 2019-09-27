@@ -1,0 +1,22 @@
+<h1 style="text-align: center; color: brown">  {{TenderFormTitle}}    </h1>
+
+
+<form class="container form text">
+    
+    <div class= "form-group">
+        
+        
+        <label class="label" for="deviceChoice">
+            Choose Device: 
+        </label>
+        <select name= "deviceChoice" 
+        style="margin: 20px" (change)="onDeviceSelection($event.target.value)">  
+        <option *ngFor="let device of DevicesArray">{{device}} </option>  
+    </select>   
+    </div>
+    
+   
+   <app-diathermy-form *ngIf="Diathermy"></app-diathermy-form>
+   <app-ultrasound-form *ngIf="Ultrasound"></app-ultrasound-form>
+</form>
+

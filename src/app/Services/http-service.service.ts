@@ -66,6 +66,14 @@ export class HttpService {
     return this.http.get<any>(Url,this.httpOptions);
 
   }
+
+  getHospitalUserByID(Id): Observable<any>
+  {
+    const Url ="http://localhost:3000/hospital-users/"+Id;
+    return this.http.get<any>(Url,this.httpOptions);
+
+  }
+
   getTenders(): Tender[]{
     return this.Tenders;
 
