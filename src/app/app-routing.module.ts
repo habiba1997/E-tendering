@@ -63,6 +63,7 @@ export const RoutingComponents = [
     CompanyProfileComponent,
     TenderFormComponent,
     DiathermyFormComponent,
-    UltrasoundFormComponent
+    UltrasoundFormComponent,
+    DirectRequestsComponent
    
   ];
