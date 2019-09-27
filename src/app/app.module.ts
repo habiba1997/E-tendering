@@ -14,6 +14,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
+import { TenderFileComponent } from './components/tender-file/tender-file.component';
 
 
 
@@ -28,7 +29,8 @@ import { DirectRequestsComponent } from './components/direct-requests/direct-req
     PageNotFoundComponent,
     TenderNotificationsComponent,
     NavBarComponent,
-    DirectRequestsComponent
+    DirectRequestsComponent,
+    TenderFileComponent
   
   ],
   imports: [

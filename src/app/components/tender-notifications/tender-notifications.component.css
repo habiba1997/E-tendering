@@ -4,6 +4,7 @@
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     height: fit-content;
+    cursor: pointer;
 
 }
 

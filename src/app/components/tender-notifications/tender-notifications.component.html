@@ -1,5 +1,5 @@
 <div *ngFor="let item of allTenders; let i = index">
-    <div class="profile-frame">
+    <div class="profile-frame" (click)="GotoTender(item)">
             <div class="col-12 del">
                     <button  (click)="delete(item)" class="xb">X</button>
 
@@ -52,3 +52,4 @@
     
     
     </div>
+    

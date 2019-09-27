@@ -7,14 +7,15 @@ import { CompanyProfileComponent } from './components/company-profile/company-pr
 import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
+import { TenderFileComponent } from './components/tender-file/tender-file.component';
 
 
 
 const appRoutes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
-    { path: "login", component: LoginComponent },
+    
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
+    
     { path: 'company/home-page' , component: NavBarComponent ,children:[
       {
         path:'',
@@ -33,12 +34,18 @@ const appRoutes: Routes = [
         path: 'company/tender-directRequest',
         component: DirectRequestsComponent,
         
-      }
+      },
+      
+      
     ]
   
   
   },
-    { path: '' , component: NavBarComponent ,outlet: "NavBar"},
+  
+   
+    { path: 'company/tender-file',component: TenderFileComponent}, 
+    { path: "login", component: LoginComponent },
+    { path: "", redirectTo: "/login", pathMatch: "full" }, 
     { path: '**', component: PageNotFoundComponent }
 
 ];

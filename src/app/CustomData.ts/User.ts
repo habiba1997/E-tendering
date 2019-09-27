@@ -41,3 +41,6 @@ export class tender {
 export class CompanyTenders{
     tenders:tender[]
 }
+export class TenderFile_Id{
+    tenderid:string;
+}

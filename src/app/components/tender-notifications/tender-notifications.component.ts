@@ -3,6 +3,7 @@ import { Tender, tender, User, UserNoPass, CompanyTenders } from 'src/app/Custom
 import { HttpService } from 'src/app/Services/http-service.service';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
 import { filter } from 'minimatch';
+import { NavigationService } from 'src/app/Services/navigation.service';
 
 @Component({
   selector: 'app-tender-notifications',
@@ -14,7 +15,8 @@ export class TenderNotificationsComponent implements OnInit {
   company:UserNoPass;
  
   
-  constructor(private TenderHttpService: HttpService, private DataService: DataCommunicationService) {
+  constructor(private TenderHttpService: HttpService, private DataService: DataCommunicationService,
+    private navigate: NavigationService,) {
     
   this.DataService.dataObject.subscribe(obj=>{
     this.company=obj;
@@ -45,10 +47,9 @@ export class TenderNotificationsComponent implements OnInit {
     this.allTenders=this.allTenders.filter(t =>t.Companies_Selected.includes(this.company.id));
 
   }
-  // GetDirectRequest(){
-  //   this.SharedTenders=this.allTenders.filter(t =>(t.Direct_Process==true && t.Companies_Selected.includes(this.company.id)));
-  //   console.log(this.SharedTenders);
-
-  // }
+  GotoTender(tender:tender){
+    this.navigate.navigateTo('company/tender-file');
+    this.DataService.getTenderFile(tender);
+  }
 
 }
