@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tender } from '../CustomData.ts/User';
+import { Tender, tender } from '../CustomData.ts/User';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +70,10 @@ export class HttpService {
   getTenders(): Tender[]{
     return this.Tenders;
 
+  }
+  GetTenders():Observable<tender[]>{
+    const Url ="http://[::1]:3000/tender-processes"
+    return this.http.get<tender[]>(Url,this.httpOptions);
   }
 
 

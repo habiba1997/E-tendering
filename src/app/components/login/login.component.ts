@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { Component, OnInit } from '@angular/core';
-import { User, UserNoPass } from 'src/app/CustomData.ts/User';
+import { User, UserNoPass, CompanyTenders, tender } from 'src/app/CustomData.ts/User';
 import { HttpService } from 'src/app/Services/http-service.service';
 import { NavigationService } from 'src/app/Services/navigation.service';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
@@ -12,6 +12,8 @@ import { DataCommunicationService } from 'src/app/Services/data-Comunication.ser
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  allTenders: tender[];
+  company: UserNoPass;
   ngOnInit() {
 
 
@@ -75,7 +77,7 @@ if(this.user.email != null && this.user.password !=null){
  //Make Http Post Request
 const parameter = JSON.stringify({email:this.user.email, password:this.user.password});
 console.log("parameter",parameter);
-this.UserHttpService.PostLogin(parameter).subscribe(user => {this.Response=user;console.log("token",user.token);});
+this.HttpService.PostLogin(parameter).subscribe(user => {this.Response=user;console.log("token",user.token);});
 }
 else {
  console.log("error");
@@ -84,7 +86,7 @@ else {
 }
 
   constructor(
-    private UserHttpService: HttpService,
+    private HttpService: HttpService,
     private navigate: NavigationService,
     private dataCom : DataCommunicationService
 
@@ -120,12 +122,12 @@ companySubmit(email,password)
   else {
     console.log("error No password or Email");
   } */
-  this.UserHttpService.PostLogin(this.dataLoginTrial())
+  this.HttpService.PostLogin(this.dataLoginTrial())
     .subscribe( (user1) => 
       {
-        that.UserHttpService.getMe(user1.token).subscribe(user2=>
+        that.HttpService.getMe(user1.token).subscribe(user2=>
         {
-          that.UserHttpService.getCompanyUserByID(user2.id).subscribe(user3=>
+          that.HttpService.getCompanyUserByID(user2.id).subscribe(user3=>
             {
               const obj = new UserNoPass;
               obj.id = user2.id;
@@ -134,8 +136,27 @@ companySubmit(email,password)
               this.dataCom.getObject(obj);
               this.navigate.navigateTo('company/home-page');
             });
-        })
+        });
+        this.HttpService.GetTenders().subscribe(allTenders=>{
+          this.allTenders=allTenders;
+          console.log("Tenders",this.allTenders);
+    
+          const SharedTenders =new CompanyTenders
+          SharedTenders.tenders=allTenders;
+          this.dataCom.getTenders(SharedTenders);
+    
+    
+    
+    
+          this.dataCom.dataObject.subscribe(object=>{
+            this.company=object;
+            console.log("company",this.company);
+      
+          });
+          
+        });
       }
+    
       );        
   
 }

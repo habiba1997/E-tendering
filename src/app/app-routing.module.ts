@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CompanyProfileComponent } from './components/company-profile/company-profile.component';
 import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
 
 
 
@@ -26,6 +27,11 @@ const appRoutes: Routes = [
       {
         path: 'company/tender-notifications',
         component: TenderNotificationsComponent,
+        
+      },
+      {
+        path: 'company/tender-directRequest',
+        component: DirectRequestsComponent,
         
       }
     ]

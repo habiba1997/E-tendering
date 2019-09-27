@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { TenderNotificationsComponent } from './components/tender-notifications/tender-notifications.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
+
 
 
 
@@ -25,13 +27,15 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     RoutingComponents,
     PageNotFoundComponent,
     TenderNotificationsComponent,
-    NavBarComponent
+    NavBarComponent,
+    DirectRequestsComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [HttpService,DataCommunicationService, NavigationService],
   bootstrap: [AppComponent]
