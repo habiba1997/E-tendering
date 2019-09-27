@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Tender } from '../CustomData.ts/User';
+import { Tender, tender } from '../CustomData.ts/User';
 
 @Injectable({
   providedIn: 'root'
@@ -14,15 +14,16 @@ export class HttpService {
   
   constructor(private http:HttpClient) { }
   //Tender trial 
-   Tenders:Tender[]=[{HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"30/06/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"23/02/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"10/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"04/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"03/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"15/05/2019"},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"18/05/2019"}];
+   Tenders:Tender[]=[{
+    HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019",id:1},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019",id:2},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"30/06/2019",id:3},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"23/02/2019",id:4},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"10/05/2019",id:5},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"04/05/2019",id:6},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"03/05/2019",id:7},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"15/05/2019",id:8},
+   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"18/05/2019",id:9}];
 
    
   
@@ -77,6 +78,10 @@ export class HttpService {
   getTenders(): Tender[]{
     return this.Tenders;
 
+  }
+  GetTenders():Observable<tender[]>{
+    const Url ="http://[::1]:3000/tender-processes"
+    return this.http.get<tender[]>(Url,this.httpOptions);
   }
 
 

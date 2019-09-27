@@ -9,6 +9,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { TenderFormComponent } from './components/tender-form/tender-form.component';
 import { DiathermyFormComponent } from './components/tender-form/diathermy-form/diathermy-form.component';
 import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
+import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
 
 
 
@@ -31,6 +32,11 @@ const appRoutes: Routes = [
       {
         path: 'company/tender-notifications',
         component: TenderNotificationsComponent,
+        
+      },
+      {
+        path: 'company/tender-directRequest',
+        component: DirectRequestsComponent,
         
       }
     ]
