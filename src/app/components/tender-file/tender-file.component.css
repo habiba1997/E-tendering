@@ -5,5 +5,15 @@
     overflow: hidden;
     height: fit-content;
 
-
+}
+button{
+   float: right;
+   margin-top: 20px;
+}
+.checks{
+    float: right; 
+    
+}
+.file{
+    margin-top: 20px;
 }

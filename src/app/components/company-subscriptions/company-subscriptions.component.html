@@ -1,1 +1,55 @@
-<p>company-subscriptions works!</p>
+<div *ngFor="let item of SubscriptionArray; let i = index">
+    <div class="profile-frame"  >
+            <div class="col-12 del">
+
+            </div>
+        <div class="container-fluid" >
+        <div class="row ">        
+            <div class="col-md-2 col-sm-auto  align-self-sm-center ">
+                    <img class="rounded-circle circle " src="assets/login_pics/hospital.png">
+                    
+            </div>
+            <div class="col-md-6 col-sm-auto ">
+                <h4 class="Tender-headline">You are subscribed to Tender Pushed from {{item.Hospital_Name}}</h4>
+                <span class ="Tender-info">
+                        {{item.Hospi}} has pushed tender for {{item.Device_Name}} 
+                </span>
+                
+        
+            </div>
+            <div class="col-2 col-sm-auto date-cell "> 
+                   <div class="tender-info-name">
+                       <span>Start</span>
+                   </div>
+                    <div class="Data-info-value">
+                            
+                            <span>{{item.startDate}}</span>
+                        </div>
+                        
+                
+            </div>
+            <div class="col-2 col-sm-auto date-cell end-date"> 
+                    <div class="tender-info-name">
+                        <span>End</span>
+                    </div>
+                     <div class="Data-info-value">
+                             
+                             <span>{{item.deadlineDate}}</span>
+                         </div>
+                         
+                 
+             </div>
+           
+            
+            
+        </div>
+
+        </div>
+        
+        </div>
+    
+    
+    
+    </div>
+    
+

@@ -1,0 +1,84 @@
+.profile-frame{
+    margin: 20px 20px 20px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: fit-content;
+    cursor: pointer;
+
+}
+
+.Tender-headline{
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 0px;
+    margin-top: 10px;
+    font:bold;
+
+    
+}
+.Tender-user-info-striped .profile-info-value {
+    border-top: 1px dotted #DCEBF7;
+    padding-left: 12px
+}
+.Tender-info {
+    border-top: 1px solid #F7FBFF;
+    color: dimgray;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    margin:5px;
+}
+.del {
+
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 0px
+  
+  }
+
+
+
+.tender-info-name,
+.Data-info-value {
+    margin-top: 5px;
+    text-align: center;
+    
+}
+
+.tender-info-name {
+    text-align: center;
+    /* padding: 6px 10px 6px 4px; */
+    font-weight: 400;
+    color: #667E99;
+    background-color: transparent;
+    width: 110px;
+  
+    /* vertical-align: middle; */
+    
+}
+.date-cell{
+    margin-top: 10px;
+    
+ 
+  
+}
+
+.end-date{
+    margin-left: 50px;
+}
+.xb{
+    background: gray;
+    color: #fff;
+    border: none; 
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+    margin: 5px;
+    
+
+
+}
+
+  

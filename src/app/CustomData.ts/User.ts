@@ -44,3 +44,7 @@ export class CompanyTenders{
 export class TenderFile_Id{
     tenderid:string;
 }
+export class SubscriptionsIds{
+    _id:string;
+}
+
