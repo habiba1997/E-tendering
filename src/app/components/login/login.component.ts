@@ -137,10 +137,10 @@ companySubmit(email,password)
               this.navigate.navigateTo('company/home-page');
             });
         });
+
         this.HttpService.GetTenders().subscribe(allTenders=>{
           this.allTenders=allTenders;
           console.log("Tenders",this.allTenders);
-    
           const SharedTenders =new CompanyTenders
           SharedTenders.tenders=allTenders;
           this.dataCom.getTenders(SharedTenders);

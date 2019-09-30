@@ -11,6 +11,7 @@ import { DiathermyFormComponent } from './components/tender-form/diathermy-form/
 import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
+import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 
 
 
@@ -39,6 +40,11 @@ const appRoutes: Routes = [
         component: DirectRequestsComponent,
         
       },
+      {
+        path: 'company/company-subscribtions',
+        component: CompanySubscriptionsComponent,
+        
+      }
       
       
     ]

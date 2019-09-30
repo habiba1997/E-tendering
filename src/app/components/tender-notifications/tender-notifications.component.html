@@ -1,10 +1,10 @@
 <div *ngFor="let item of allTenders; let i = index">
-    <div class="profile-frame" (click)="GotoTender(item)">
+    <div class="profile-frame" (click)="GotoTender(item)" >
             <div class="col-12 del">
                     <button  (click)="delete(item)" class="xb">X</button>
 
             </div>
-        <div class="container-fluid">
+        <div class="container-fluid" >
         <div class="row ">        
             <div class="col-md-2 col-sm-auto  align-self-sm-center ">
                     <img class="rounded-circle circle " src="assets/login_pics/hospital.png">

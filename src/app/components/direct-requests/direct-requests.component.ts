@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
 import { tender, UserNoPass } from 'src/app/CustomData.ts/User';
-
+import { HttpService } from 'src/app/Services/http-service.service';
 @Component({
   selector: 'app-direct-requests',
   templateUrl: './direct-requests.component.html',
@@ -10,7 +10,7 @@ import { tender, UserNoPass } from 'src/app/CustomData.ts/User';
 export class DirectRequestsComponent implements OnInit {
   DirectRequestTenders:tender[];
   company:UserNoPass;
-  constructor(private DataService :DataCommunicationService) { 
+  constructor(private DataService :DataCommunicationService,private HttpService: HttpService) { 
     this.DataService.dataObject.subscribe(object=>{
       this.company=object;
       console.log(this.company);
@@ -23,6 +23,20 @@ export class DirectRequestsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+  delete(noti:tender){
+    this.DirectRequestTenders=this.DirectRequestTenders.filter(t => t._id !== noti._id);
+    let deletiondata=JSON.stringify(
+      {
+        CompanyUserId: this.company.id,
+        TenderingProcessId: noti._id
+      }
+  );
+  this.HttpService.RejectTender(deletiondata);
+    
+  
+    console.log("direct request tenders ",this.DirectRequestTenders);
+    
   }
 
 }

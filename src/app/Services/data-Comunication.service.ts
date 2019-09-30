@@ -27,7 +27,9 @@ export class DataCommunicationService {
     this.tenderObjectSource.next({tenders:SharedTenders.tenders});
   }
   getTenderFile (item:tender){
+    console.log(item);
     this.datatransferObject.next({tenderid:item._id});
+   
   }
 
 

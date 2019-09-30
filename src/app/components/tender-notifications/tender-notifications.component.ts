@@ -15,7 +15,7 @@ export class TenderNotificationsComponent implements OnInit {
   company:UserNoPass;
  
   
-  constructor(private TenderHttpService: HttpService, private DataService: DataCommunicationService,
+  constructor(private HttpService: HttpService, private DataService: DataCommunicationService,
     private navigate: NavigationService,) {
     
   this.DataService.dataObject.subscribe(obj=>{
@@ -39,7 +39,15 @@ export class TenderNotificationsComponent implements OnInit {
   }
   delete(noti:tender){
     this.allTenders=this.allTenders.filter(t => t._id !== noti._id);
+    let deletiondata=JSON.stringify(
+      {
+        CompanyUserId: this.company.id,
+        TenderingProcessId: noti._id
+      }
+  );
+  this.HttpService.RejectTender(deletiondata);
     
+  
     console.log(this.allTenders);
     
   }
@@ -47,9 +55,11 @@ export class TenderNotificationsComponent implements OnInit {
     this.allTenders=this.allTenders.filter(t =>t.Companies_Selected.includes(this.company.id));
 
   }
-  GotoTender(tender:tender){
+  GotoTender(item:tender){
+    this.DataService.getTenderFile(item);
     this.navigate.navigateTo('company/tender-file');
-    this.DataService.getTenderFile(tender);
+    console.log("hi");
+    
   }
 
 }
