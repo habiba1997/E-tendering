@@ -84,6 +84,33 @@ export class HttpService {
     return this.http.get<tender[]>(Url,this.httpOptions);
   }
 
+  getCompanyNames():Observable<any>
+  {
+    const Url ="http://localhost:3000/company-users-names";
+    return this.http.get<any>(Url,this.httpOptions);
+
+  }
+
+
+
+  postTender(data): Observable<any>
+  {
+    const Url ="http://localhost:3000/tender-process"
+    console.log("url: "+Url);
+    return this.http.post<any>(Url, data, this.httpOptions);
+
+  }
+  // getCompanyNames():Promise<Names[]>
+  // {
+  //   const Url =" http://localhost:3000/company-users-names";
+  //   return this.http.get<Names[]>(Url,this.httpOptions)
+  //   .map(response => {
+  //     const array = JSON.parse(response.json()) as any[];
+  //     return array;
+  // })
+  // .toPromise();
+
+  // }
 
 }
 

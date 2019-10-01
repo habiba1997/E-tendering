@@ -9,10 +9,6 @@ import { NavigationService } from './Services/navigation.service';
 import { DataService } from './Services/data.service'
 import { FormsModule } from '@angular/forms';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

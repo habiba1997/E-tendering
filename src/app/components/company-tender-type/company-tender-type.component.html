@@ -1,0 +1,56 @@
+<h1 style="text-align: center; color: brown">  {{TenderFormTitle}}    </h1>
+
+<form class="container form text">
+
+        <div class= "form-group">    
+            <label class="label" for="tenderType">
+                Tender Process Type: 
+            </label>
+            <select name= "tenderType" 
+            style="margin: 20px" 
+            [(ngModel)]="DirectType"
+            (change)="onTenderTypeSelection($event.target.value)">  
+            <option *ngFor="let type of TenderProcessType">{{type}} </option>  
+            </select>   
+        </div>
+
+
+        <div *ngIf="DirectType=='Undirect'" class= "form-group">
+            <label class="label" for="tenderOpen">
+                Tender Process Type: 
+            </label>
+            <select name= "tenderOpen" 
+            style="margin: 20px" [(ngModel)]="type"
+            (change)="onTenderOpenSelection($event.target.value)">  
+            <option *ngFor="let type of UndirectTenderProcessType">{{type}} </option>  
+        </select>   
+        </div>
+
+ 
+
+        <div *ngIf="Tendertype=='Closed'" >
+            <label class="container" class="list-group"> 
+                <li *ngFor="let obj of companies" class="list-group-item">
+                         <input class="radioLabel" type="checkbox"  
+                             (change)="checkBox($event.target.checked,obj._id)"
+                             >{{obj.name}}                    
+                </li>
+            </label>
+        </div>   
+
+        <div *ngIf="DirectType=='Direct'" class= "form-group">  
+            <label class="label" for="tenderDirect">
+                Companies: 
+            </label>
+            <select name= "tenderDirect" 
+            [(ngModel)]="companySelected"
+            style="margin: 20px" (change)="onCompanySelection($event.target.value)">  
+            <option *ngFor="let obj of companies" [value]="obj._id" >{{obj.name}} </option></select>    
+          
+        </div>
+        
+        <button (click)="submit()" class="btn-lg btn btn-primary">Submit</button>
+
+
+
+</form>

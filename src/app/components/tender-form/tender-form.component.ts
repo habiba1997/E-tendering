@@ -12,7 +12,11 @@ export class TenderFormComponent  {
   Diathermy: boolean = true;
   Ultrasound: boolean = false;
 
+
   deviceValue:string="Diathermy";
+
+  companiesSelected;
+
 
   constructor(
     private data:DataService,
@@ -46,6 +50,10 @@ export class TenderFormComponent  {
       } 
    } 
   }
+
+
+
+
 
 
 }
