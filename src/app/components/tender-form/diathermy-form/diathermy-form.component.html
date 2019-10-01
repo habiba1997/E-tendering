@@ -92,6 +92,15 @@
                 <p>Value: <span id="demo">{{CogPowerRange}}</span></p>
         </div>
 </div>
+<div class= "center">
+        <label for="deviceCoagPower">
+            Deadline Date: 
+        </label>
+        <div class="slidecontainer">
+                <input  [(ngModel)]="myDeadDate" type="date" name="bday">
+
+        </div>
+</div>
 
 
   <div class= "center">
@@ -100,18 +109,19 @@
         </label>
         <div name="FDA">
             <div>
-               <input id="Certified" name="FDACertified" type="radio"  (change)="onFDAChange('Certified')" >
+               <input id="Certified" name="FDACertified" type="radio"  (change)="onFDAChange(true)" >
                <label class="radioLabel"  for="Certified">Certified</label>
             </div>
          
             <div>
-               <input id="NotCertified" name="FDACertified" type="radio" (change)="onFDAChange('NotCertified')" >
+               <input id="NotCertified" name="FDACertified" type="radio" (change)="onFDAChange(false)" >
                <label class="radioLabel"for="NotCertified">NotCertified</label>
             </div> 
         
         </div>
 </div> 
-    <button (click)="templateForm()" class="btn-lg btn btn-primary">Submit</button>
+
+<button (click)="Submit()" class="btn-lg btn btn-primary">Submit</button>
 
 
 

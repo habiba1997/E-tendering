@@ -10,6 +10,7 @@ import { TenderFormComponent } from './components/tender-form/tender-form.compon
 import { DiathermyFormComponent } from './components/tender-form/diathermy-form/diathermy-form.component';
 import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
+import { CompanyTenderTypeComponent } from './components/company-tender-type/company-tender-type.component';
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
@@ -20,7 +21,8 @@ import { HospitalTendersComponent } from './components/hospital-tenders/hospital
 
 const appRoutes: Routes = [
     { path: "tender-form", component: TenderFormComponent },
-
+    { path: "tender", component: CompanyTenderTypeComponent },
+    { path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
     
@@ -97,6 +99,7 @@ export const RoutingComponents = [
     TenderFormComponent,
     DiathermyFormComponent,
     UltrasoundFormComponent,
-    DirectRequestsComponent
+    DirectRequestsComponent,
+    CompanyTenderTypeComponent
    
   ];

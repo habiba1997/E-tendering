@@ -19,10 +19,6 @@ import { HospitalHomePageComponent } from './components/hospital-home-page/hospi
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

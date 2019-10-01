@@ -14,9 +14,11 @@
         <option *ngFor="let device of DevicesArray">{{device}} </option>  
     </select>   
     </div>
-    
    
-   <app-diathermy-form *ngIf="Diathermy"></app-diathermy-form>
+   <app-diathermy-form  *ngIf="Diathermy"></app-diathermy-form>
    <app-ultrasound-form *ngIf="Ultrasound"></app-ultrasound-form>
+
+
+
 </form>
 

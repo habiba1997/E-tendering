@@ -1,161 +1,164 @@
-<h1 style="text-align: center; color: brown">   Ultrasound    </h1>
-<form class="container text">
-    
-    
-    <div class="dropdown">
-        <button class="btn bg-primary dropbtn">Ultrasound</button>
-        <div class="dropdown-content" *ngFor="let device">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-        </div>
-      </div>
+<h1 style="text-align: center;" class="text-danger">   Ultrasound    </h1>
+<form class="container text form-group">
 
- <!--   <div class= "form-group">
-            <label for="countryOForigin">
-                Country of origin
+<div class= "center ">
+            <label class="label" for="countryOForigin">
+                Country of origin: 
             </label>
-            <input required  
-            name= "countryOForigin" 
-            id="countryOForigin" 
-            type= "text" 
-            class="form-control">
-            <div
-               class="alert alert-danger"
-            >
-               <div>
-                   Countr of origin is required.
-               </div>
+            <select name="countryOForigin" 
+            [(ngModel)]="countryOfOrigin">  
+            <option *ngFor="let Country of countriesArray">{{Country}} </option>  
+        </select>   
+</div>
+
+<div >
+    <label class="container" class="list-group"> 
+        <label class="label" for="PhysicalandErgonomicFeatures">
+                    Physical and Ergonomic Features:
+        </label>
+        <li  class="list-group-item" *ngFor="let feature of PhysicalandErgonomicFeaturesArray">
+                 <input  class="radioLabel" name="PhysicalandErgonomicFeatures"  type="checkbox"  
+                     (change)="onFeatureSelection($event.target.checked,feature)"
+                     >{{feature}}                    
+        </li>
+    </label>
+</div>  
+
+ 
+
+
+<div >
+        <label class="list-group container"> 
+            <label class="label" for="ScanModes">
+                       Scan Modes:
+            </label>
+            <li class="list-group-item" *ngFor="let mode of ScanModesArray">
+                     <input class="radioLabel" name="ScanModes"  type="checkbox"  
+                         (change)="onFScanModesSelection($event.target.checked,mode)"
+                         >{{mode}}                    
+            </li>
+        </label>
+    </div>  
+
+
+<div class= "center">
+        <label class="label" for="probs">
+            Device Probs: 
+        </label>
+        <div name="probs">
+            <div>
+               <input id="Convex" name="Convex" type="radio"  (change)="onProbsChange('Convex')" >
+               <label class="radioLabel"  for="Convex">Convex</label>
+            </div>
+         
+            <div>
+               <input id="TransVaginal" name="TransVaginal" type="radio" (change)="onProbsChange('TransVaginal')" >
+               <label class="radioLabel"for="TransVaginal">Trans Vaginal</label>
             </div>
         </div>
+</div>           
 
-        <div 
-        class= "center"
-        class= "form-group">
-        <label for="devicePolarity">
-            Device Polarity
-        </label>
-        <input required 
-        name= "devicePolarity" 
-        id="devicePolarity" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-               Device Polarity is required.
-           </div>
-        </div>
-    </div>
-    <div 
-        class= "center"
-        class= "form-group">
-        <label for="deviceCompatibility">
-            Device Compatibility
-        </label>
-        <input required 
-        name= "deviceCompatibility" 
-        id="deviceCompatibility" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-               Device Compatibility is required.
-           </div>
-        </div>
-    </div>
-
-    <div 
-        class= "center"
-        class= "form-group">
-        <label for="deviceAlarms">
-            Device Alarms
-        </label>
-        <input required 
-        name= "deviceAlarms" 
-        id="deviceAlarms" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-               Device Alarms is required.
-           </div>
-        </div>
-    </div>
-
-    <div 
-        class= "center"
-        class= "form-group">
-        <label for="deviceMaxpowerRange">
-            Device Maximum Range Monopolar cut power
-        </label>
-        <input required 
-        name= "deviceMaxpowerRange" 
-        id="deviceMaxpowerRange" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-               This field is required.
-           </div>
-        </div>
-    </div>
-
-    <div 
-        class= "center"
-        class= "form-group">
+<div class= "center">
         <label for="deviceCoagPower">
-            Device Mono polar coagulation power
+            Deadline Date: 
         </label>
-        <input required 
-        name= "deviceCoagPower" 
-        id="deviceCoagPower" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-                This field is required.
-            </div>
-        </div>
-    </div>
+        <div class="slidecontainer">
+                <input  [(ngModel)]="myDeadDate" type="date" name="bday">
 
-    <div 
-        class= "center"
-        class= "form-group">
-        <label for="deviceAccessories">
-            Device Accessories
+        </div>
+</div>
+
+
+  <div class= "center">
+        <label class="label" for="FDA">
+                FDA Certified: 
         </label>
-        <input required 
-        name= "deviceAccessories" 
-        id="deviceAccessories" 
-        type= "text" 
-        class="form-control">
-        <div
-           class="alert alert-danger"
-           >
-           <div>
-               Device Accessories is required.
-           </div>
+        <div name="FDA">
+            <div>
+               <input id="Certified" name="FDACertified" type="radio"  (change)="onFDAChange(true)" >
+               <label class="radioLabel"  for="Certified">Certified</label>
+            </div>
+         
+            <div>
+               <input id="NotCertified" name="FDACertified" type="radio" (change)="onFDAChange(false)" >
+               <label class="radioLabel"for="NotCertified">NotCertified</label>
+            </div> 
+        
         </div>
+</div> 
+
+<!-- 
+
+
+
+<div class= "center">
+        <label class="label" for="deviceCompatibility">
+            Device Compatibility: 
+        </label>
+    <div name="deviceCompatibility">
+        <div>
+            <input id="Open" name="Compatibility" type="radio" (change)="onCompatibilitychange('Open')" >
+            <label class="radioLabel"  for="Open">Open</label>
+         </div>
+      
+         <div>
+            <input id="Compatible" name="Compatibility" type="radio" (change)="onCompatibilitychange('Compatible')" >
+            <label class="radioLabel"for="Compatible">Compatible</label>
+         </div>
+         <div>
+            <input  id="Both" name="Compatibility" type="radio" (change)="onCompatibilitychange('Both')" >
+            <label class="radioLabel"  for="Both">Both</label>
+         </div>
     </div>
-    <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <input type="radio" aria-label="Radio button for following text input">
-                       FDA Certified
-          </div>
+</div>
+
+
+<div class= "center">
+        <label for="deviceAlarms">
+            Device Alarms: 
+        </label>
+    <div name="deviceAlarms">
+        <div>
+                <input id="Audiable"  name="Alarms" type="radio" (change)="onAlarmchange('Audiable')" >
+                <label class="radioLabel"  for="Audiable">Audiable</label>
+             </div>
+          
+             <div>
+                <input id="Visual" name="Alarms" type="radio" (change)="onAlarmchange('Visual')" >
+                <label class="radioLabel"for="Visual">Visual</label>
+             </div>
+             <div>
+                <input  id="both" name="Alarms" type="radio" (change)="onAlarmchange('Both')" >
+                <label class="radioLabel"  for="both">Both</label>
+       </div>
+    </div>  
+</div>
+
+<div class= "center">
+        <label for="deviceMaxpowerRange">
+            Device Maximum Range Monopolar cut power: 
+        </label>
+        <div name="deviceMaxpowerRange" class="slidecontainer">
+            <input type="range" min="200" max="400" value="300" (change)="powerRangeChange(RangeValue.value)" class="slider" id="myRange" #RangeValue>
+            <p>Value: <span id="demo">{{PowerRange}}</span></p>
         </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button">
-      </div>
+</div>
+
+<div class= "center">
+        <label for="deviceCoagPower">
+            Device Mono polar coagulation power: 
+        </label>
+        <div class="slidecontainer">
+                <input type="range" min="20" max="100" value="60" (change)="powerCoagulationRangeChange(CogRangeValue.value)" class="slider" id="myCogRange" #CogRangeValue>
+                <p>Value: <span id="demo">{{CogPowerRange}}</span></p>
+        </div>
+</div>
+
+
+<button (click)="Submit()" class="btn-lg btn btn-primary">Submit</button>
+
+
+
 
       <div class="input-group">
         <div class="input-group-prepend">
@@ -166,7 +169,7 @@
         </div>
         <input type="text" class="form-control" aria-label="Text input with radio button">
       </div>
--->
-    <button class="btn btn-primary"> Submit</button>
+
+    <button class="btn btn-primary"> Submit</button> -->
 </form>
 
