@@ -13,6 +13,8 @@ import { DirectRequestsComponent } from './components/direct-requests/direct-req
 import { CompanyTenderTypeComponent } from './components/company-tender-type/company-tender-type.component';
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
+import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
+import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
 
 
 
@@ -54,8 +56,22 @@ const appRoutes: Routes = [
   
   },
   
+  
    
-    { path: 'company/tender-file',component: TenderFileComponent}, 
+    { path: 'company/tender-file',component: TenderFileComponent},
+    { path: "hospital/home-page", component: HospitalHomePageComponent ,
+    children:[
+      {
+        path:'',
+        component:HospitalProfileComponent
+      },
+      {
+        path:'hospital/profile',
+        component:HospitalProfileComponent
+      },
+
+    ]}, 
+  
     { path: "login", component: LoginComponent },
     { path: "", redirectTo: "/login", pathMatch: "full" }, 
     { path: '**', component: PageNotFoundComponent }
