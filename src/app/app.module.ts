@@ -17,6 +17,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
+import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 
 
 
@@ -35,6 +36,7 @@ import { HospitalProfileComponent } from './components/hospital-profile/hospital
     CompanySubscriptionsComponent,
     HospitalHomePageComponent,
     HospitalProfileComponent,
+    HospitalTendersComponent,
   
   ],
   imports: [

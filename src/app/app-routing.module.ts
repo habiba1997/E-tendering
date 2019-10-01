@@ -14,6 +14,7 @@ import { TenderFileComponent } from './components/tender-file/tender-file.compon
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
+import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 
 
 
@@ -66,6 +67,10 @@ const appRoutes: Routes = [
       {
         path:'hospital/profile',
         component:HospitalProfileComponent
+      },
+      {
+        path:'hospital/tenders',
+        component:HospitalTendersComponent
       },
 
     ]}, 
