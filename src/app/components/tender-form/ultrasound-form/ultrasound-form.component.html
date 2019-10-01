@@ -1,7 +1,7 @@
-<h1 style="text-align: center;" class="text-danger">   Ultrasound    </h1>
+<h1 style="text-align: center;" class="font text-danger">   Ultrasound    </h1>
 <form class="container text form-group">
 
-<div class= "center ">
+<div>
             <label class="label" for="countryOForigin">
                 Country of origin: 
             </label>
@@ -41,7 +41,7 @@
     </div>  
 
 
-<div class= "center">
+<div >
         <label class="label" for="probs">
             Device Probs: 
         </label>
@@ -58,8 +58,8 @@
         </div>
 </div>           
 
-<div class= "center">
-        <label for="deviceCoagPower">
+<div >
+        <label class="label" for="deviceCoagPower">
             Deadline Date: 
         </label>
         <div class="slidecontainer">
@@ -69,7 +69,7 @@
 </div>
 
 
-  <div class= "center">
+  <div >
         <label class="label" for="FDA">
                 FDA Certified: 
         </label>
@@ -87,89 +87,8 @@
         </div>
 </div> 
 
-<!-- 
+<button (click)="Submit()" class="boton btn-lg btn btn-primary">Submit</button>
 
 
-
-<div class= "center">
-        <label class="label" for="deviceCompatibility">
-            Device Compatibility: 
-        </label>
-    <div name="deviceCompatibility">
-        <div>
-            <input id="Open" name="Compatibility" type="radio" (change)="onCompatibilitychange('Open')" >
-            <label class="radioLabel"  for="Open">Open</label>
-         </div>
-      
-         <div>
-            <input id="Compatible" name="Compatibility" type="radio" (change)="onCompatibilitychange('Compatible')" >
-            <label class="radioLabel"for="Compatible">Compatible</label>
-         </div>
-         <div>
-            <input  id="Both" name="Compatibility" type="radio" (change)="onCompatibilitychange('Both')" >
-            <label class="radioLabel"  for="Both">Both</label>
-         </div>
-    </div>
-</div>
-
-
-<div class= "center">
-        <label for="deviceAlarms">
-            Device Alarms: 
-        </label>
-    <div name="deviceAlarms">
-        <div>
-                <input id="Audiable"  name="Alarms" type="radio" (change)="onAlarmchange('Audiable')" >
-                <label class="radioLabel"  for="Audiable">Audiable</label>
-             </div>
-          
-             <div>
-                <input id="Visual" name="Alarms" type="radio" (change)="onAlarmchange('Visual')" >
-                <label class="radioLabel"for="Visual">Visual</label>
-             </div>
-             <div>
-                <input  id="both" name="Alarms" type="radio" (change)="onAlarmchange('Both')" >
-                <label class="radioLabel"  for="both">Both</label>
-       </div>
-    </div>  
-</div>
-
-<div class= "center">
-        <label for="deviceMaxpowerRange">
-            Device Maximum Range Monopolar cut power: 
-        </label>
-        <div name="deviceMaxpowerRange" class="slidecontainer">
-            <input type="range" min="200" max="400" value="300" (change)="powerRangeChange(RangeValue.value)" class="slider" id="myRange" #RangeValue>
-            <p>Value: <span id="demo">{{PowerRange}}</span></p>
-        </div>
-</div>
-
-<div class= "center">
-        <label for="deviceCoagPower">
-            Device Mono polar coagulation power: 
-        </label>
-        <div class="slidecontainer">
-                <input type="range" min="20" max="100" value="60" (change)="powerCoagulationRangeChange(CogRangeValue.value)" class="slider" id="myCogRange" #CogRangeValue>
-                <p>Value: <span id="demo">{{CogPowerRange}}</span></p>
-        </div>
-</div>
-
-
-<button (click)="Submit()" class="btn-lg btn btn-primary">Submit</button>
-
-
-
-
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text">
-            <input type="radio" aria-label="Radio button for following text input">
-                       Have return electrode contact safty
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with radio button">
-      </div>
-
-    <button class="btn btn-primary"> Submit</button> -->
 </form>
 

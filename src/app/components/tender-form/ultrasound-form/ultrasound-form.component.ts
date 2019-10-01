@@ -9,6 +9,7 @@ import { NavigationService } from 'src/app/Services/navigation.service';
   selector: 'app-ultrasound-form',
   templateUrl: './ultrasound-form.component.html',
   styleUrls: ['../../../app.component.css'],
+  providers:[DatePipe]
 })
 export class UltrasoundFormComponent  {
 
@@ -33,8 +34,8 @@ ScanModes=[];
 
   companiesSelected;
   Date;
-Open:boolean;
-Direct:boolean;
+  Open:boolean;
+  Direct:boolean;
 
   constructor(
     private datePipe: DatePipe,
@@ -43,7 +44,9 @@ Direct:boolean;
     private http:HttpService,
     private navigate:NavigationService
     ) {
-      let myDate = new Date();
+
+
+      var myDate = new Date();
       this.countriesArray=data.countries;  
       this.dataCom.companiesIdObject.subscribe(object => 
         {
@@ -91,12 +94,12 @@ Direct:boolean;
       return array;
     }
       
-print()
+    print()
 {
   console.log(this.countryOfOrigin);    
   console.log(this.PhysicalandErgonomicFeatures);
+  console.log(this.ScanModes);
   console.log(this.probs);
-
   console.log(this.FDA);
   console.log(this.Date)
   console.log(this.myDeadDate);
@@ -104,7 +107,7 @@ print()
   console.log(this.Direct)
   console.log(this.companiesSelected);
 }
-   Submit() {
+Submit() {
      console.log(this.obj());
   this.http.postTender(this.obj()).subscribe(user => {console.log("token",user);});
   }
@@ -114,13 +117,12 @@ print()
     return {
 
       "Issued_Hospital_ID": "5d83ecbe91fed14ee103b3ab",
-      "Device_Name": "Diathermy",
+      "Device_Name": "Ultrasound",
       "Device_Data": {	
             "countryOfOrigin":this.countryOfOrigin,
-           
-            
-         
-          
+            "PhysicalandErgonomicFeatures" :this.PhysicalandErgonomicFeatures,
+            "ScanModes": this.ScanModes,
+            "probs" : this.probs,
             "FDACertified":this.FDA
     },
       "startDate": this.Date,
