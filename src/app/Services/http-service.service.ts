@@ -11,21 +11,10 @@ import { Tender, tender } from '../CustomData.ts/User';
 
 
 export class HttpService {
-  
+  localhost ="http://localhost:3000/";
   constructor(private http:HttpClient) { }
-  //Tender trial 
-   Tenders:Tender[]=[{
-    HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019",id:1},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"20/05/2019",id:2},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"30/06/2019",id:3},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"23/02/2019",id:4},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"10/05/2019",id:5},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"04/05/2019",id:6},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"03/05/2019",id:7},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"15/05/2019",id:8},
-   {HospitalName:"Salam El Dowli",DeviceName:"MRI",Date:"18/05/2019",id:9}];
-
-   
+  
+  
   
 
   httpOptions = {
@@ -46,7 +35,7 @@ export class HttpService {
 
 
   PostLogin(user:string): Observable<any>{
-    const Url ="http://[::1]:3000/users/login";
+    const Url =this.localhost+"users/login";
     return this.http.post<any>(Url, user, this.httpOptions);
   }
 
@@ -56,31 +45,28 @@ export class HttpService {
     const httpOptions = {
       headers: this.httpGetTokenOptions(token)
     };
-    const Url ="http://[::1]:3000/users/me";
+    const Url =this.localhost+"users/me";
     return this.http.get<any>(Url,httpOptions);
 
   }
 
   getCompanyUserByID(Id): Observable<any>
   {
-    const Url ="http://localhost:3000/company-users/"+Id;
+    const Url =this.localhost+"company-users/"+Id;
     return this.http.get<any>(Url,this.httpOptions);
 
   }
 
   getHospitalUserByID(Id): Observable<any>
   {
-    const Url ="http://localhost:3000/hospital-users/"+Id;
+    const Url =this.localhost+"hospital-users/"+Id;
     return this.http.get<any>(Url,this.httpOptions);
 
   }
 
-  getTenders(): Tender[]{
-    return this.Tenders;
 
-  }
   GetTenders():Observable<tender[]>{
-    const Url ="http://[::1]:3000/tender-processes"
+    const Url =this.localhost+"tender-processes"
     return this.http.get<tender[]>(Url,this.httpOptions);
   }
 
@@ -111,6 +97,19 @@ export class HttpService {
   // .toPromise();
 
   // }
+  PostTenderSubscription(user:string): Observable<any>{
+    const Url =this.localhost+"company-submit";
+    return this.http.post<any>(Url, user, this.httpOptions);
+  }
+  RejectTender(tender:string):Observable<any>{
+    const Url =this.localhost+"company-reject";
+    return this.http.post<any>(Url, tender, this.httpOptions);
+
+  }
+ getTenderbyId(tenderids:string):Observable<any>{
+  const Url =this.localhost+"all-tender-processes";
+  return this.http.post<any>(Url,tenderids,this.httpOptions);
+ } 
 
 }
 

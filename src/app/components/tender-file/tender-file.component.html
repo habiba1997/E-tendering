@@ -1,0 +1,34 @@
+
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-1"></div>
+        <div class=" col-10 tender-frame" >
+            <div class="file" *ngFor="let item of trialfile">    
+            <span >
+                    Hello {{item}} {{tenderfile_id.tenderid}}
+
+            </span>
+            <div class="checks">
+                    
+
+               <!-- Default inline 1-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline1" name="inlineDefaultRadiosExample">
+                <label class="custom-control-label" for="defaultInline1">exist</label>
+                </div>
+
+                <!-- Default inline 2-->
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="defaultInline2" name="inlineDefaultRadiosExample">
+                <label class="custom-control-label" for="defaultInline2">not exist</label>
+                </div>
+            </div>
+               
+            </div>
+            <button (click)="AddCompanySubscribtion()" type="button" class="btn btn-danger">Subscribe</button>
+        </div>
+        <div class="col-1">
+            
+        </div>
+    </div>
+</div>

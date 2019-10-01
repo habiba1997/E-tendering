@@ -11,17 +11,18 @@ import { DiathermyFormComponent } from './components/tender-form/diathermy-form/
 import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
 import { CompanyTenderTypeComponent } from './components/company-tender-type/company-tender-type.component';
+import { TenderFileComponent } from './components/tender-file/tender-file.component';
+import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 
 
 
 const appRoutes: Routes = [
-    { path: "", redirectTo: "/login", pathMatch: "full" },
-    { path: "login", component: LoginComponent },
     { path: "tender-form", component: TenderFormComponent },
     { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
+    
     { path: 'company/home-page' , component: NavBarComponent ,children:[
       {
         path:'',
@@ -40,12 +41,23 @@ const appRoutes: Routes = [
         path: 'company/tender-directRequest',
         component: DirectRequestsComponent,
         
+      },
+      {
+        path: 'company/company-subscribtions',
+        component: CompanySubscriptionsComponent,
+        
       }
+      
+      
     ]
   
   
   },
-    { path: '' , component: NavBarComponent ,outlet: "NavBar"},
+  
+   
+    { path: 'company/tender-file',component: TenderFileComponent}, 
+    { path: "login", component: LoginComponent },
+    { path: "", redirectTo: "/login", pathMatch: "full" }, 
     { path: '**', component: PageNotFoundComponent }
 
 ];

@@ -1,7 +1,6 @@
-<div *ngFor="let item of allTenders; let i = index">
-    <div class="profile-frame" (click)="GotoTender(item)" >
+<div *ngFor="let item of SubscriptionArray; let i = index">
+    <div class="profile-frame"  >
             <div class="col-12 del">
-                    <button  (click)="delete(item)" class="xb">X</button>
 
             </div>
         <div class="container-fluid" >
@@ -11,9 +10,9 @@
                     
             </div>
             <div class="col-md-6 col-sm-auto ">
-                <h4 class="Tender-headline">Tender Pushed from {{item.Hospital_Name}}</h4>
+                <h4 class="Tender-headline">You are subscribed to Tender Pushed from {{item.Hospital_Name}}</h4>
                 <span class ="Tender-info">
-                        {{item.Hospital_Name}} has pushed tender for {{item.Device_Name}} 
+                        {{item.Hospi}} has pushed tender for {{item.Device_Name}} 
                 </span>
                 
         
@@ -53,3 +52,4 @@
     
     </div>
     
+

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { UserNoPass, CompanyTenders } from '../CustomData.ts/User';
 import { companyOpenComp } from '../CustomData.ts/ directAndOpen';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { UserNoPass, tender, CompanyTenders, TenderFile_Id } from '../CustomData.ts/User';
 
 @Injectable(  
 )
@@ -18,6 +18,8 @@ export class DataCommunicationService {
     companiesIdObject = this.companiesIdSource.asObservable();
 
    
+    private datatransferObject= new BehaviorSubject(new TenderFile_Id);
+    transferObject = this.datatransferObject.asObservable();
   
 
   constructor() { }
@@ -31,6 +33,12 @@ export class DataCommunicationService {
   getTenders(SharedTenders:CompanyTenders){
     this.tenderObjectSource.next({tenders:SharedTenders.tenders});
   }
+  getTenderFile (item:tender){
+    console.log(item);
+    this.datatransferObject.next({tenderid:item._id});
+   
+  }
+
 
  
 
