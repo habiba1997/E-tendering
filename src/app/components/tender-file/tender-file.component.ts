@@ -15,6 +15,8 @@ export class TenderFileComponent implements OnInit {
  company:UserNoPass;
  companyData:any;
  trialfile=[1,2,3,4,5,6,7,8,9];
+ CheckboxCount:number;
+ checked:boolean;
   constructor( private tenderService: DataCommunicationService,private httpService: HttpService) { 
     this.tenderService.transferObject.subscribe(tenderid=>{this.tenderfile_id=tenderid
     ;console.log("TenderFileID",this.tenderfile_id);});
@@ -31,7 +33,7 @@ export class TenderFileComponent implements OnInit {
   AddCompanySubscribtion(){
     this.httpService.getCompanyUserByID(this.company.id).subscribe(company=>{this.companyData=company;
       console.log("company",company);
-      if(isNull(this.companyData.TenderingProcessesAccepted)|| !this.companyData.TenderingProcessesAccepted.includes(this.tenderfile_id.tenderid)){
+      if(isNull(this.companyData.TenderingProcessesAccepted)|| !(this.companyData.TenderingProcessesAccepted.includes(this.tenderfile_id.tenderid))){
         let subscribtiondata=JSON.stringify(
             {
               companyId: this.company.id,
@@ -55,18 +57,22 @@ export class TenderFileComponent implements OnInit {
       
       
     });
-
-    // 
-    //   );
-    //   console.log("subs data",subscribtiondata);
-      
-    //  this.httpService.PostTenderSubscription(subscribtiondata).subscribe(result=>{
-    //    this.httpService.getCompanyUserByID(this.company.id).subscribe(company=>{
-    //     console.log("company after subscribtion",company);
-    //   });
-    //  });
-     
+    
+    
 
   }
+  checkBox(){
+    this.CheckboxCount++; 
+    let checkboxs=(<HTMLInputElement><any>document.getElementsByName("inlineDefaultRadiosExample"));
+      if ( checkboxs.checked) {
+          
+              this.CheckboxCount ++;
+              console.log("checks",this.CheckboxCount);  
+          
+          
+      }
+  
+  
+ }
 
 }

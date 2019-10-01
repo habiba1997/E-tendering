@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class CompanySubscriptionsComponent implements OnInit {
  company:UserNoPass;
  Subscriptions=[];
+ SubscriptionList=[];
   constructor(private httpService: HttpService,private tenderService: DataCommunicationService) { 
     this.tenderService.dataObject.subscribe(obj=>{this.company=obj;
       console.log("company",obj);
@@ -31,7 +32,9 @@ export class CompanySubscriptionsComponent implements OnInit {
       let subscribtiondata=JSON.stringify(this.Subscriptions)
       console.log("data",subscribtiondata);
       this.httpService.getTenderbyId(subscribtiondata).subscribe(result=>{
-        console.log("tenders",result);
+        this.SubscriptionList=result;
+        console.log("tenders",this.SubscriptionList);
+
       });
       
       

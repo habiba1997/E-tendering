@@ -104,7 +104,7 @@ dataLogin(Myemail,Mypassword)
     }
     );
 }
-dataLoginTrial()
+companyLoginTrial()
 {
   return JSON.stringify(
     {
@@ -113,16 +113,22 @@ dataLoginTrial()
     }
     );
 }
+hospitalLoginTrial()
+{
+  return JSON.stringify(
+    {
+      email: "AdamHospital@yahoo.com", 
+       password : "AdamHospital"
+    }
+    );
+}
+
 
 companySubmit(email,password)
 {
   var that = this;
-  /*if(email != null && password !=null){
-  }
-  else {
-    console.log("error No password or Email");
-  } */
-  this.HttpService.PostLogin(this.dataLoginTrial())
+ 
+  this.HttpService.PostLogin(this.companyLoginTrial())
     .subscribe( (user1) => 
       {
         that.HttpService.getMe(user1.token).subscribe(user2=>
@@ -159,6 +165,31 @@ companySubmit(email,password)
     
       );        
   
+}
+
+
+hospitalSubmit(){
+  var that = this;
+  this.HttpService.PostLogin(this.hospitalLoginTrial())
+    .subscribe( (user1) => 
+      {
+        that.HttpService.getMe(user1.token).subscribe(user2=>
+        {
+          that.HttpService.getHospitalUserByID(user2.id).subscribe(user3=>
+            {
+              const obj = new UserNoPass;
+              obj.id = user2.id;
+              obj.name =user3.name;
+              obj.email=user3.email;
+              this.dataCom.getObject(obj);
+              this.navigate.navigateTo('hospital/home-page');
+              console.log("hospital",obj);
+            });
+
+        });
+        
+      });
+
 }
 
 

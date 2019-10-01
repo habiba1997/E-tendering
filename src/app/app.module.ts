@@ -15,6 +15,8 @@ import { DirectRequestsComponent } from './components/direct-requests/direct-req
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
+import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
+import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
 
 
 
@@ -31,6 +33,8 @@ import { CompanySubscriptionsComponent } from './components/company-subscription
     TenderFileComponent,
     PageNotFoundComponent,
     CompanySubscriptionsComponent,
+    HospitalHomePageComponent,
+    HospitalProfileComponent,
   
   ],
   imports: [
