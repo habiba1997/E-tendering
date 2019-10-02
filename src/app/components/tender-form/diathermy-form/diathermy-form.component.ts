@@ -64,9 +64,11 @@ print()
   console.log(this.companiesSelected);
 }
    Submit() {
-     console.log(this.obj());
-  // this.http.postTender(this.obj()).subscribe(user => {console.log("token",user);});
-  }
+     console.log(JSON.stringify(this.obj()));
+this.http.postTender(JSON.stringify(this.obj())).subscribe(data=>
+  {
+    console.log(data)
+  });  }
 
   obj()
   {

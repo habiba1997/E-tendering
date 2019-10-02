@@ -108,8 +108,10 @@ ScanModes=[];
 }
 Submit() {
      console.log(this.obj());
-  // this.http.postTender(this.obj()).subscribe(user => {console.log("token",user);});
-  }
+     this.http.postTender(JSON.stringify(this.obj())).subscribe(data=>
+      {
+        console.log(data)
+      });  }
 
   obj()
   {

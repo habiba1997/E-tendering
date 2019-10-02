@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/Services/http-service.service';
+import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
 
 @Component({
   selector: 'app-agreed-companies',
@@ -80,9 +81,21 @@ export class AgreedCompaniesComponent{
     }
     
   ]
+
   constructor(
-    private http:HttpService
-  ) { }
+    private http:HttpService,private dateservice:DataCommunicationService
+
+  ) {
+
+// this.dateservice.dataSourceObject.subscribe(
+//   data=>
+//   {
+//      //this.Agreed = data;
+//      console.log(""dara7data);
+//   }
+// )
+
+   }
 
 
 

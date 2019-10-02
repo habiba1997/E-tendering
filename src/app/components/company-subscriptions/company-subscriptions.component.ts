@@ -23,7 +23,7 @@ export class CompanySubscriptionsComponent implements OnInit {
 
   ngOnInit() {
     this.httpService.getCompanyUserByID(this.company.id).subscribe(company=>{
-      company.TenderingProcessesAccepted.forEach(element => {
+      company.specificTenderingProcessesAccepted.forEach(element => {
         console.log("element",element);
         this.Subscriptions.push({_id:element});
         

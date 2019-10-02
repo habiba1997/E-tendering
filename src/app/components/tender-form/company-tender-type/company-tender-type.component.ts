@@ -34,13 +34,13 @@ export class CompanyTenderTypeComponent  implements OnInit{
     var comp=[];
 
     let that = this;
-    // this.http.getCompanyNames().subscribe(user3=>
-    //   {
-    //     user3.forEach(element => {
-    //       comp[i]=element;
-    //      i=i+1;
-    //     });
-    //   });
+    this.http.getCompanyNames().subscribe(user3=>
+      {
+        user3.forEach(element => {
+          comp[i]=element;
+         i=i+1;
+        });
+      });
 
     this.companies=comp;
 

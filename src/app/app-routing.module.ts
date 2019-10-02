@@ -30,8 +30,8 @@ const appRoutes: Routes = [
     { path: "ultrasound", component: UltrasoundFormComponent },
     { path: "ultra", component: UltrasoundFileComponent },
 
-    //{ path: "tender-form", component: TenderFormComponent },
-    //{ path: "tender", component: CompanyTenderTypeComponent },
+    { path: "tender-form", component: TenderFormComponent },
+    { path: "tender", component: CompanyTenderTypeComponent },
     //{ path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },

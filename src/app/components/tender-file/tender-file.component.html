@@ -1,9 +1,7 @@
 <div *ngIf="deviceName==='MRI'">{{deviceName}}</div>
 <div *ngIf="deviceName==='Ventilator'">{{deviceName}}</div>
-<app-diathermy-file *ngIf="deviceName==='diathermy'" [Tender]="TenderData">{{deviceName}}</app-diathermy-file>
-
-
-
+<app-diathermy-file *ngIf="deviceName==='Diathermy'" [Tender]="TenderData">{{deviceName}}</app-diathermy-file>
+<app-ultrasound-file *ngIf="deviceName==='Ultrasound'" [Tender]="TenderData">{{deviceName}}</app-ultrasound-file>
 
 
 

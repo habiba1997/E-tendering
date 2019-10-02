@@ -103,5 +103,19 @@ export class HttpService {
   this.http.get<any>(Url,this.httpOptionEmail);
  }
 
+
+ getCompanyNames()
+ {
+   const Url = "http://localhost:3000/company-users-names";
+   return this.http.get<any>(Url,this.httpOptionEmail);
+
+ }
+ postTender(tender:string):Observable<any>{
+  const Url =this.localhost+"tender-process";
+  return this.http.post<any>(Url,tender,this.httpOptions);
+ } 
+ 
+
+
 }
 

@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
     <div class="row justify-content-lg-center" >
-        <div class="profile-frame col-lg-5" *ngFor="let item of SubscriptionList;">
+        <div (click)="sendTender(item)" class="profile-frame col-lg-5" *ngFor="let item of SubscriptionList;">
             <h4 class="Tender-headline"> Tender for {{item.Device_Name}} </h4>
             <div class="profile-info-row">
                     <div class="profile-info-name">Device-Name</div>

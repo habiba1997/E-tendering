@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/Services/http-service.service';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
 import { UserNoPass, SubscriptionsIds } from 'src/app/CustomData.ts/User';
+import { NavigationService } from 'src/app/Services/navigation.service';
 
 @Component({
   selector: 'app-hospital-tenders',
@@ -13,7 +14,11 @@ export class HospitalTendersComponent implements OnInit {
  hospitaData:any;
  SubscriptionList=[];
  Subscriptions =[];
-  constructor(private httpservice :HttpService , private dateservice:DataCommunicationService) { }
+  constructor(private httpservice :HttpService ,
+    
+    private navigate:NavigationService,
+    
+    private dateservice:DataCommunicationService) { }
 
   ngOnInit() {
     this.dateservice.dataObject.subscribe(user=>{
@@ -43,6 +48,14 @@ export class HospitalTendersComponent implements OnInit {
 
       
     });
+  }
+
+
+  sendTender(tender)
+  {
+    this.dateservice.getData(tender.Agreed);
+    console.log(tender.Agreed);
+    this.navigate.navigateTo("/agreed");
   }
 
 }
