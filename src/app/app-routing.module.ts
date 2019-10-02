@@ -23,10 +23,10 @@ import { UltrasoundFileComponent } from './components/tender-file/ultrasound-fil
 
 
 const appRoutes: Routes = [
-    { path: "tender-form", component: TenderFormComponent },
+    
     //to be removed 
     { path: "tender-Diathermy", component: DiathermyFileComponent},
-    { path: "tender", component: CompanyTenderTypeComponent },
+    // { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
     { path: "ultra", component: UltrasoundFileComponent },
 
@@ -92,7 +92,8 @@ const appRoutes: Routes = [
       {
         path:'hospital/new-tender',
         component: CompanyTenderTypeComponent
-      },
+      }
+      
      
 
     ]}, 
