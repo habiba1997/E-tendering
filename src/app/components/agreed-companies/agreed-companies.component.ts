@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/Services/http-service.service';
 
 @Component({
   selector: 'app-agreed-companies',
@@ -79,7 +80,9 @@ export class AgreedCompaniesComponent{
     }
     
   ]
-  constructor() { }
+  constructor(
+    private http:HttpService
+  ) { }
 
 
 
@@ -111,7 +114,7 @@ export class AgreedCompaniesComponent{
       }
   return maxIndex;      
   }
-  MostFit()
+  async MostFit()
   {
     let max = 0;
     let maxIndex=-1;

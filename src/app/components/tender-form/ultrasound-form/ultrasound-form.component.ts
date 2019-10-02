@@ -15,7 +15,6 @@ export class UltrasoundFormComponent  {
 
   PhysicalandErgonomicFeature:string;
   PhysicalandErgonomicFeaturesArray=["Room based wheeled unit",
-"Screen with ultrasound image area f.o.v. 12cm x 15 cm with a matrix of 512 x 512 and effective pixel size of no less than 500",
 "Slave Monitor", "Flexible Position Monitor (height and angle)",
 "Flexible position control console (height and angle)", "Subdued console lighting"
 ];

@@ -23,6 +23,13 @@ export class HttpService {
 
     })
   };
+
+
+  httpOptionEmail = {
+    headers: new HttpHeaders({
+
+    })
+  };
   httpGetTokenOptions(accessToken) {
 
     return new HttpHeaders({
@@ -89,6 +96,12 @@ export class HttpService {
 
  }
  
+
+ postEmail(userEmail)
+ {
+  const Url =this.localhost+"/sendEmail/"+userEmail;
+  this.http.get<any>(Url,this.httpOptionEmail);
+ }
 
 }
 

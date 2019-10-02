@@ -192,6 +192,9 @@ hospitalSubmit(){
 
 }
 
-
+adminSubmit()
+{
+  
+}
 
 }

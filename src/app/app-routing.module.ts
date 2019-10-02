@@ -18,6 +18,7 @@ import { HospitalProfileComponent } from './components/hospital-profile/hospital
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
 import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
+import { UltrasoundFileComponent } from './components/tender-file/ultrasound-file/ultrasound-file.component';
 
 
 
@@ -27,12 +28,15 @@ const appRoutes: Routes = [
     { path: "tender-Diathermy", component: DiathermyFileComponent},
     { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
+    { path: "ultra", component: UltrasoundFileComponent },
+
     //{ path: "tender-form", component: TenderFormComponent },
     //{ path: "tender", component: CompanyTenderTypeComponent },
     //{ path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
-    
+    { path: "ultrasound", component: UltrasoundFormComponent },
+
 
     { path: 'agreed' , component: AgreedCompaniesComponent },
 
@@ -122,6 +126,6 @@ export const RoutingComponents = [
     HospitalHomePageComponent,
     HospitalProfileComponent,
     AgreedCompaniesComponent,
-  
+    UltrasoundFileComponent
    
   ];
