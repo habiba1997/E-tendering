@@ -53,14 +53,24 @@
 .form {
   border: 5px solid #343a40;
   border-radius: 8px;
+  margin-block: 10px 20px;
 }
+.boton{
 
+  font-weight: bold;
+  color: white;
+  margin: 40px;
+  font-size: 20px;
+
+}
 
 .label{
   font-weight: bold;
   color: black;
   margin: 15px;
   font-size: 16px;
+margin-top: 40px;
+font-family: "Times New Roman", Times, serif;
 
 }
 
@@ -98,7 +108,9 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
+  .font{
+    font-family: "Times New Roman", Times, serif;
+  }
   .dropdown:hover .dropbtn {
     background-color: #3e8e41;
   }

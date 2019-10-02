@@ -43,12 +43,12 @@ NumofFits:number=0;
             }
         );
         this.httpService.PostTenderSubscription(subscribtiondata).subscribe(result=>{
-          console.log("subscribed",subscribtiondata);
+          
           alert("You are successfully subscribed to this tender");
         });
 
       }
-      else{
+      else{        
         console.log("already subscribed");
         alert("You are already subscribed");
         

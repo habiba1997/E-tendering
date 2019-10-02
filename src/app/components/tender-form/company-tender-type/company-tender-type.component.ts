@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/Services/http-service.service';
 import { NavigationService } from 'src/app/Services/navigation.service';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
-import { companyNames } from 'src/app/CustomData.ts/ directAndOpen';
 
 @Component({
   selector: 'app-company-tender-type',
   templateUrl: './company-tender-type.component.html',
-  styleUrls: ['../../app.component.css']
+  styleUrls: ['../../../app.component.css']
 })
 export class CompanyTenderTypeComponent  implements OnInit{
   TenderFormTitle:string="New Tender Request"
@@ -32,9 +31,10 @@ export class CompanyTenderTypeComponent  implements OnInit{
    
   async ngOnInit() {
     var i =0;  
-    var compa=[];
+    var comp=[];
 
     let that = this;
+<<<<<<< HEAD:src/app/components/company-tender-type/company-tender-type.component.ts
     // this.http.getCompanyNames().subscribe(user3=>
     //   {
     //     user3.forEach(element => {
@@ -42,8 +42,17 @@ export class CompanyTenderTypeComponent  implements OnInit{
     //      i=i+1;
     //     });
     //   });
+=======
+    this.http.getCompanyNames().subscribe(user3=>
+      {
+        user3.forEach(element => {
+          comp[i]=element;
+         i=i+1;
+        });
+      });
+>>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84:src/app/components/tender-form/company-tender-type/company-tender-type.component.ts
 
-    this.companies=compa;
+    this.companies=comp;
 
     console.log(this.companies)
 

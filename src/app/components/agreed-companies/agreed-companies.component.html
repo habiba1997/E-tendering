@@ -1,0 +1,25 @@
+<div class="container form">
+
+<div style="margin: 30px">
+
+
+
+
+    <ul  class="list-group">
+        <li *ngFor="let user of Agreed" [className]="user.winner ? 'bg-success text-light list-group-item d-flex justify-content-between align-items-center h3 font' : 'h3 font text-dark list-group-item d-flex justify-content-between align-items-center'" >
+                {{user.companyName}}
+          <span [className]="user.winner ? 'badge badge-light h1 font' : 'badge badge-success h1 font'">{{user.numberOfFits}}</span>
+        </li>
+     
+    </ul>
+           
+</div>
+<div style="margin: 50px">
+        <label style="margin: 30px" class="h2 font text-dark"> Submission Results </label>
+        <button type="button" (click)="MostFit()" class="text-light btn bg-danger btn-lg btn-block">Submission Results</button>
+        <button type="button" (click)="ThreeMostFit()"class="text-light btn btn-secondary bg-success btn-lg btn-block">Three Most Fit Companies</button>
+
+</div>
+
+
+</div>
