@@ -18,6 +18,7 @@ import { CompanySubscriptionsComponent } from './components/company-subscription
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
+import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HospitalTendersComponent } from './components/hospital-tenders/hospital
     HospitalHomePageComponent,
     HospitalProfileComponent,
     HospitalTendersComponent,
+    DiathermyFileComponent,
   
   ],
   imports: [

@@ -65,7 +65,7 @@ print()
 }
    Submit() {
      console.log(this.obj());
-  this.http.postTender(this.obj()).subscribe(user => {console.log("token",user);});
+  // this.http.postTender(this.obj()).subscribe(user => {console.log("token",user);});
   }
 
   obj()

@@ -16,11 +16,14 @@ import { CompanySubscriptionsComponent } from './components/company-subscription
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
+import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
 
 
 
 const appRoutes: Routes = [
     { path: "tender-form", component: TenderFormComponent },
+    //to be removed 
+    { path: "tender-Diathermy", component: DiathermyFileComponent},
     { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },

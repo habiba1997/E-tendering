@@ -70,33 +70,6 @@ export class HttpService {
     return this.http.get<tender[]>(Url,this.httpOptions);
   }
 
-  getCompanyNames():Observable<any>
-  {
-    const Url ="http://localhost:3000/company-users-names";
-    return this.http.get<any>(Url,this.httpOptions);
-
-  }
-
-
-
-  postTender(data): Observable<any>
-  {
-    const Url ="http://localhost:3000/tender-process"
-    console.log("url: "+Url);
-    return this.http.post<any>(Url, data, this.httpOptions);
-
-  }
-  // getCompanyNames():Promise<Names[]>
-  // {
-  //   const Url =" http://localhost:3000/company-users-names";
-  //   return this.http.get<Names[]>(Url,this.httpOptions)
-  //   .map(response => {
-  //     const array = JSON.parse(response.json()) as any[];
-  //     return array;
-  // })
-  // .toPromise();
-
-  // }
   PostTenderSubscription(user:string): Observable<any>{
     const Url =this.localhost+"company-submit";
     return this.http.post<any>(Url, user, this.httpOptions);
@@ -106,10 +79,16 @@ export class HttpService {
     return this.http.post<any>(Url, tender, this.httpOptions);
 
   }
- getTenderbyId(tenderids:string):Observable<any>{
+  getTendersListbyId(tenderids:string):Observable<any>{
   const Url =this.localhost+"all-tender-processes";
   return this.http.post<any>(Url,tenderids,this.httpOptions);
  } 
+ getTenderById(id:string):Observable<any>{
+  const Url =this.localhost+"tender-processes/"+id;
+  return this.http.get<any>(Url,this.httpOptions);
+
+ }
+ 
 
 }
 

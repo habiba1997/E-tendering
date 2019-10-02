@@ -1,5 +1,29 @@
+<div *ngIf="deviceName==='MRI'">{{deviceName}}</div>
+<div *ngIf="deviceName==='Ventilator'">{{deviceName}}</div>
+<app-diathermy-file *ngIf="deviceName==='diathermy'" [Tender]="TenderData">{{deviceName}}</app-diathermy-file>
 
-<div class="container-fluid" >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid" >
     <div class="row">
         <div class="col-1"></div>
         <div class=" col-10 tender-frame" >
@@ -9,16 +33,16 @@
 
             </span>
             <div class="checks">
-                    
+                     -->
 
                <!-- Default inline 1-->
-                <div class="custom-control custom-radio custom-control-inline">
+                <!-- <div class="custom-control custom-radio custom-control-inline">
                 <input type="checkbox" id="defaultInline1" name="inlineDefaultRadiosExample" (change)="checkBox()" >
                 <label class="radioLabel" for="defaultInline1">exist</label>
-                </div>
+                </div> -->
 
                 <!-- Default inline 2-->
-                <div class="custom-control custom-radio custom-control-inline">
+                <!-- <div class="custom-control custom-radio custom-control-inline">
                 <input type="checkbox" id="defaultInline1" name="inlineDefaultRadiosExample"  >
                 <label class="radioLabel" for="defaultInline2">not exist</label>
                 </div>
@@ -31,4 +55,4 @@
             
         </div>
     </div>
-</div>
+</div> -->

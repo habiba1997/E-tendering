@@ -1,0 +1,227 @@
+<div class="container-fluid" >
+        <div class="row">
+                <div class="col-12 head-line">
+                    <h2 class="text-center ">Diathermy Tender File</h2>
+                </div>
+            </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class=" col-10 tender-frame" >
+            <div class="file" >    
+            <span >
+                Polarity: {{TenderSpecs.polarity}}  
+
+            </span>
+            <div class="checks">
+                     
+
+               
+                <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="check($event)" >
+                <label class="radioLabel" for="defaultInline1">exist</label>
+                </div>
+
+                
+                 <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="notcheck($event)"  >
+                <label class="radioLabel" for="defaultInline2">not exist</label>
+                </div>
+            </div>
+
+
+            </div>
+
+
+
+            <div class="file" >    
+                    <span >
+                            Compatibility: {{TenderSpecs.compatibility}}  
+        
+                    </span>
+                    <div class="checks">
+                             
+        
+                       
+                        <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="defaultInline2" name="inlineDefaultRadiosExample2" (change)="check($event)" >
+                        <label class="radioLabel" for="defaultInline2">exist</label>
+                        </div>
+        
+                        
+                         <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="defaultInline2" name="inlineDefaultRadiosExample2"  (change)="notcheck($event)" >
+                        <label class="radioLabel" for="defaultInline2">not exist</label>
+                        </div>
+                    </div>
+        
+        
+                    </div>
+
+                    <div class="file" >    
+                            <span >
+                                    Alarm: {{TenderSpecs.alarm}}  
+                
+                            </span>
+                            <div class="checks">
+                                     
+                
+                               
+                                <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample3" (change)="check($event)" >
+                                <label class="radioLabel" for="defaultInline1">exist</label>
+                                </div>
+                
+                                
+                                 <div class="custom-control custom-radio custom-control-inline">
+                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample3" (change)="notcheck($event)"  >
+                                <label class="radioLabel" for="defaultInline2">not exist</label>
+                                </div>
+                            </div>
+                
+                
+                            </div>
+
+
+                            <div class="file" >    
+                                    <span >
+                                            Power-Range: {{TenderSpecs.powerRange}}  
+                        
+                                    </span>
+                                    <div class="checks">
+                                             
+                        
+                                       
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample4" (change)="check($event)" >
+                                        <label class="radioLabel" for="defaultInline1">exist</label>
+                                        </div>
+                        
+                                        
+                                         <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample4" (change)="notcheck($event)"  >
+                                        <label class="radioLabel" for="defaultInline2">not exist</label>
+                                        </div>
+                                    </div>
+                        
+                        
+                                    </div>
+
+                                    <div class="file" >    
+                                            <span >
+                                                    CogPowerRange: {{TenderSpecs.CogPowerRange}}  
+                                
+                                            </span>
+                                            <div class="checks">
+                                                     
+                                
+                                               
+                                                <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample5" (change)="check($event)" >
+                                                <label class="radioLabel" for="defaultInline1">exist</label>
+                                                </div>
+                                
+                                                
+                                                 <div class="custom-control custom-radio custom-control-inline">
+                                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample5" (change)="notcheck($event)"  >
+                                                <label class="radioLabel" for="defaultInline2">not exist</label>
+                                                </div>
+                                            </div>
+                                
+                                
+                                            </div>
+
+                                            <div class="file" >    
+                                                    <span >
+                                                            FDACertified: {{TenderSpecs.FDACertified}}  
+                                        
+                                                    </span>
+                                                    <div class="checks">
+                                                             
+                                        
+                                                       
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="check($event)" >
+                                                        <label class="radioLabel" for="defaultInline1">exist</label>
+                                                        </div>
+                                        
+                                                        
+                                                         <div class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="notcheck($event)" >
+                                                        <label class="radioLabel" for="defaultInline2">not exist</label>
+                                                        </div>
+                                                    </div>
+                                        
+                                        
+                                                    </div>
+                                                            <div class="file">
+                                                                    <button (click)="AddCompanySubscribtion()" type="button" class="btn btn-danger">Subscribe</button>
+
+                                                            </div>                                       
+            
+        </div>
+        <div class="col-1">
+            
+        </div>
+    </div>
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-12 ">
+            <h2 class="text-center ">Diathermy Tender File</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+                <div>
+                        <span >
+                                Hello {{item}} {{tenderfile_id.tenderid}}
+            
+                        </span>
+                    </div>
+                    <div>
+                    
+                            <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample" (change)="check($event)" >
+                            <label class="radioLabel" for="defaultInline1">exist</label>
+                            </div>
+            
+                          
+                            <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample"  >
+                            <label class="radioLabel" for="defaultInline2">not exist</label>
+                            </div>
+                    </div>
+
+        </div>
+        <div class="col-2">
+
+        </div>
+       
+            </div>
+    </div>
+
+ -->

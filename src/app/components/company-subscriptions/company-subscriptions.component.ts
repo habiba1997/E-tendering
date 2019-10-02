@@ -31,7 +31,7 @@ export class CompanySubscriptionsComponent implements OnInit {
       console.log("subs",this.Subscriptions);
       let subscribtiondata=JSON.stringify(this.Subscriptions)
       console.log("data",subscribtiondata);
-      this.httpService.getTenderbyId(subscribtiondata).subscribe(result=>{
+      this.httpService.getTendersListbyId(subscribtiondata).subscribe(result=>{
         this.SubscriptionList=result;
         console.log("tenders",this.SubscriptionList);
 
