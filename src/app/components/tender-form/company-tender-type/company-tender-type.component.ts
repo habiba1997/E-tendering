@@ -34,23 +34,13 @@ export class CompanyTenderTypeComponent  implements OnInit{
     var comp=[];
 
     let that = this;
-<<<<<<< HEAD:src/app/components/company-tender-type/company-tender-type.component.ts
     // this.http.getCompanyNames().subscribe(user3=>
     //   {
     //     user3.forEach(element => {
-    //       compa[i]=element;
+    //       comp[i]=element;
     //      i=i+1;
     //     });
     //   });
-=======
-    this.http.getCompanyNames().subscribe(user3=>
-      {
-        user3.forEach(element => {
-          comp[i]=element;
-         i=i+1;
-        });
-      });
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84:src/app/components/tender-form/company-tender-type/company-tender-type.component.ts
 
     this.companies=comp;
 

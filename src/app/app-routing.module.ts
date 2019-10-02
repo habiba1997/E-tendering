@@ -15,27 +15,21 @@ import { TenderFileComponent } from './components/tender-file/tender-file.compon
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
-<<<<<<< HEAD
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
-=======
 import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84
 
 
 
 const appRoutes: Routes = [
-<<<<<<< HEAD
     { path: "tender-form", component: TenderFormComponent },
     //to be removed 
     { path: "tender-Diathermy", component: DiathermyFileComponent},
     { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
-=======
     //{ path: "tender-form", component: TenderFormComponent },
     //{ path: "tender", component: CompanyTenderTypeComponent },
     //{ path: "ultrasound", component: UltrasoundFormComponent },
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
     
@@ -88,16 +82,14 @@ const appRoutes: Routes = [
         component:HospitalProfileComponent
       },
       {
-<<<<<<< HEAD
         path:'hospital/tenders',
         component:HospitalTendersComponent
       },
-=======
+      {
         path:'hospital/new-tender',
         component: CompanyTenderTypeComponent
       },
      
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84
 
     ]}, 
   

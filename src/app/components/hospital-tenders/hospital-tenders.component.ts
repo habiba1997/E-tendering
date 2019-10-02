@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/Services/http-service.service';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
-import { UserNoPass } from 'src/app/CustomData.ts/User';
+import { UserNoPass, SubscriptionsIds } from 'src/app/CustomData.ts/User';
 
 @Component({
   selector: 'app-hospital-tenders',
@@ -11,6 +11,8 @@ import { UserNoPass } from 'src/app/CustomData.ts/User';
 export class HospitalTendersComponent implements OnInit {
  hospital:UserNoPass;
  hospitaData:any;
+ SubscriptionList=[];
+ Subscriptions =[];
   constructor(private httpservice :HttpService , private dateservice:DataCommunicationService) { }
 
   ngOnInit() {
@@ -20,7 +22,24 @@ export class HospitalTendersComponent implements OnInit {
       this.httpservice.getHospitalUserByID(this.hospital.id).subscribe(data=>{
         this.hospitaData=data;
         console.log("hospital-data",this.hospitaData);
+        this.hospitaData.TenderingProcessesCreated.forEach(element => {
+          console.log("element",element);
+          this.Subscriptions.push({_id:element});
+          
+        });
+        console.log(this.Subscriptions);
+        let subscribtiondata=JSON.stringify(this.Subscriptions);
+        console.log("data",subscribtiondata);
+        this.httpservice.getTendersListbyId(subscribtiondata).subscribe(result=>{
+        this.SubscriptionList=result;
+        console.log("tenders",this.SubscriptionList);
+  
+        });
+        
       });
+     
+      
+      
 
       
     });

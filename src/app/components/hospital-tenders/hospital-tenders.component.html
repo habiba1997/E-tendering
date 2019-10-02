@@ -1,1 +1,47 @@
-<p>hospital-tenders works!</p>
+<div class="container-fluid">
+
+    <div class="row justify-content-lg-center" >
+        <div class="profile-frame col-lg-5" *ngFor="let item of SubscriptionList;">
+            <h4 class="Tender-headline"> Tender Pushed from {{item.Hospital_Name}} Hospital</h4>
+            <div class="profile-info-row">
+                    <div class="profile-info-name">Device-Name</div>
+    
+                    <div class="profile-info-value">
+                        <span>{{item.Device_Name}}</span>
+                    </div>
+                </div>
+                <div class="profile-info-row">
+                        <div class="profile-info-name">Country</div>
+        
+                        <div class="profile-info-value">
+                            <span>{{item.CountryOfOrigin}}</span>
+                        </div>
+                    </div>
+                <div class="profile-info-row">
+                        <div class="profile-info-name">Direct_Process</div>
+        
+                        <div class="profile-info-value">
+                            <span>{{item.Direct_Process}}</span>
+                        </div>
+                    </div>
+                <div class="profile-info-row">
+                            <div class="profile-info-name">Start_Date</div>
+            
+                            <div class="profile-info-value">
+                                <span>{{item.startDate}}</span>
+                            </div>
+                        </div>
+                <div class="profile-info-row">
+                                <div class="profile-info-name">Deadline_Date</div>
+                
+                                <div class="profile-info-value">
+                                    <span>{{item.deadlineDate}}</span>
+                                </div>
+                            </div>        
+
+                
+        </div>
+    </div>
+</div>
+
+

@@ -17,18 +17,14 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
-<<<<<<< HEAD
 import { HospitalTendersComponent } from './components/hospital-tenders/hospital-tenders.component';
 import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
-=======
 import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
-<<<<<<< HEAD
     NavBarComponent,
     CompanyProfileComponent,
     TenderNotificationsComponent,
@@ -41,8 +37,6 @@ import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-c
     HospitalTendersComponent,
     DiathermyFileComponent,
   
-=======
->>>>>>> a3d1e1827ca0923a91a502e04fd25cfc5754ce84
   ],
   imports: [
     FormsModule,

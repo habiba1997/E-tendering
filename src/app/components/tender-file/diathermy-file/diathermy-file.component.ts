@@ -33,7 +33,7 @@ NumofFits:number=0;
   AddCompanySubscribtion(){
     this.httpService.getCompanyUserByID(this.Company.id).subscribe(company=>{this.companyData=company;
       console.log("company",company);
-      if(isNull(this.companyData.TenderingProcessesAccepted)|| !(this.companyData.TenderingProcessesAccepted.includes(this.Tender._id))){
+      if(isNull(this.companyData.TenderingProcessesEntered)|| !(this.companyData.TenderingProcessesEntered.includes(this.Tender._id))){
         let subscribtiondata=JSON.stringify(
             {
               companyId: this.Company.id,

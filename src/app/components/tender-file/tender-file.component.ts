@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataCommunicationService } from 'src/app/Services/data-Comunication.service';
 import { TenderFile_Id, UserNoPass } from 'src/app/CustomData.ts/User';
 import { HttpService } from 'src/app/Services/http-service.service';
+import { isNull } from 'util';
 
 
 @Component({
@@ -35,7 +36,37 @@ export class TenderFileComponent implements OnInit {
   
     
   }
+  // AddCompanySubscribtion(){
+  //   this.httpService.getCompanyUserByID(this.company.id).subscribe(company=>{this.companyData=company;
+  //     console.log("company",company);
+  //     if(isNull(this.companyData.TenderingProcessesEntered)|| !(this.companyData.TenderingProcessesEntered.includes(this.tenderfile_id.tenderid))){
+  //       let subscribtiondata=JSON.stringify(
+  //           {
+  //             companyId: this.company.id,
+  //             tenderingProcessId: this.tenderfile_id.tenderid,
+  //             numberOfFits: 0
 
+  //           }
+  //       );
+  //       this.httpService.PostTenderSubscription(subscribtiondata).subscribe(result=>{
+  //         console.log("subscribed");
+  //         alert("You are successfully subscribed to this tender");
+  //       });
+
+  //     }
+  //     else{
+  //       console.log("already subscribed");
+  //       alert("You are already subscribed");
+        
+  //     }
+      
+      
+      
+  //   });
+    
+    
+
+  // }
   checkBox(){
     this.CheckboxCount++; 
     let checkboxs=(<HTMLInputElement><any>document.getElementsByName("inlineDefaultRadiosExample"));
@@ -49,5 +80,6 @@ export class TenderFileComponent implements OnInit {
   
   
  }
+
 
 }
