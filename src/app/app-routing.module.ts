@@ -10,21 +10,26 @@ import { TenderFormComponent } from './components/tender-form/tender-form.compon
 import { DiathermyFormComponent } from './components/tender-form/diathermy-form/diathermy-form.component';
 import { UltrasoundFormComponent } from './components/tender-form/ultrasound-form/ultrasound-form.component';
 import { DirectRequestsComponent } from './components/direct-requests/direct-requests.component';
-import { CompanyTenderTypeComponent } from './components/company-tender-type/company-tender-type.component';
+import { CompanyTenderTypeComponent } from './components/tender-form/company-tender-type/company-tender-type.component';
 import { TenderFileComponent } from './components/tender-file/tender-file.component';
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
+import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
 
 
 
 const appRoutes: Routes = [
-    { path: "tender-form", component: TenderFormComponent },
-    { path: "tender", component: CompanyTenderTypeComponent },
-    { path: "ultrasound", component: UltrasoundFormComponent },
+    //{ path: "tender-form", component: TenderFormComponent },
+    //{ path: "tender", component: CompanyTenderTypeComponent },
+    //{ path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: 'company/tender-notifications' , component: TenderNotificationsComponent },
     //{ path: 'company' , component: CompanyHomeComponent },
     
+
+    { path: 'agreed' , component: AgreedCompaniesComponent },
+
+
     { path: 'company/home-page' , component: NavBarComponent ,children:[
       {
         path:'',
@@ -69,6 +74,11 @@ const appRoutes: Routes = [
         path:'hospital/profile',
         component:HospitalProfileComponent
       },
+      {
+        path:'hospital/new-tender',
+        component: CompanyTenderTypeComponent
+      },
+     
 
     ]}, 
   
@@ -89,12 +99,18 @@ export const RoutingComponents = [
     LoginComponent,
     PageNotFoundComponent,
     TenderNotificationsComponent,
-    NavBarComponent,TenderFormComponent,
+    NavBarComponent,
     CompanyProfileComponent,
     TenderFormComponent,
     DiathermyFormComponent,
     UltrasoundFormComponent,
     DirectRequestsComponent,
-    CompanyTenderTypeComponent
+    CompanyTenderTypeComponent,
+    TenderFileComponent,
+    CompanySubscriptionsComponent,
+    HospitalHomePageComponent,
+    HospitalProfileComponent,
+    AgreedCompaniesComponent,
+  
    
   ];

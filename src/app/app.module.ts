@@ -17,21 +17,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CompanySubscriptionsComponent } from './components/company-subscriptions/company-subscriptions.component';
 import { HospitalHomePageComponent } from './components/hospital-home-page/hospital-home-page.component';
 import { HospitalProfileComponent } from './components/hospital-profile/hospital-profile.component';
+import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutingComponents,
-    NavBarComponent,
-    CompanyProfileComponent,
-    TenderNotificationsComponent,
-    DirectRequestsComponent,
-    TenderFileComponent,
-    PageNotFoundComponent,
-    CompanySubscriptionsComponent,
-    HospitalHomePageComponent,
-    HospitalProfileComponent,
-  
   ],
   imports: [
     FormsModule,
