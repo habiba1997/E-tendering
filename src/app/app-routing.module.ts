@@ -22,10 +22,10 @@ import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-c
 
 
 const appRoutes: Routes = [
-    { path: "tender-form", component: TenderFormComponent },
+    
     //to be removed 
     { path: "tender-Diathermy", component: DiathermyFileComponent},
-    { path: "tender", component: CompanyTenderTypeComponent },
+    // { path: "tender", component: CompanyTenderTypeComponent },
     { path: "ultrasound", component: UltrasoundFormComponent },
     //{ path: "tender-form", component: TenderFormComponent },
     //{ path: "tender", component: CompanyTenderTypeComponent },
@@ -88,7 +88,8 @@ const appRoutes: Routes = [
       {
         path:'hospital/new-tender',
         component: CompanyTenderTypeComponent
-      },
+      }
+      
      
 
     ]}, 

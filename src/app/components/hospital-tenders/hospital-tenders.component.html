@@ -2,7 +2,7 @@
 
     <div class="row justify-content-lg-center" >
         <div class="profile-frame col-lg-5" *ngFor="let item of SubscriptionList;">
-            <h4 class="Tender-headline"> Tender Pushed from {{item.Hospital_Name}} Hospital</h4>
+            <h4 class="Tender-headline"> Tender for {{item.Device_Name}} </h4>
             <div class="profile-info-row">
                     <div class="profile-info-name">Device-Name</div>
     
@@ -11,28 +11,22 @@
                     </div>
                 </div>
                 <div class="profile-info-row">
-                        <div class="profile-info-name">Country</div>
+                        <div class="profile-info-name">Tender-Type</div>
         
                         <div class="profile-info-value">
-                            <span>{{item.CountryOfOrigin}}</span>
+                            <span *ngIf="item.Direct_Process">{{item.Direct_Process}}</span>
+                            <span *ngIf="item.Open_Process">{{item.Open_Process}}</span>
                         </div>
                     </div>
                 <div class="profile-info-row">
-                        <div class="profile-info-name">Direct_Process</div>
+                        <div class="profile-info-name">Start_Date</div>
         
                         <div class="profile-info-value">
-                            <span>{{item.Direct_Process}}</span>
+                            <span>{{item.startDate}}</span>
                         </div>
                     </div>
                 <div class="profile-info-row">
-                            <div class="profile-info-name">Start_Date</div>
-            
-                            <div class="profile-info-value">
-                                <span>{{item.startDate}}</span>
-                            </div>
-                        </div>
-                <div class="profile-info-row">
-                                <div class="profile-info-name">Deadline_Date</div>
+                                <div class="profile-info-name">Deadline</div>
                 
                                 <div class="profile-info-value">
                                     <span>{{item.deadlineDate}}</span>
