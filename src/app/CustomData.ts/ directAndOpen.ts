@@ -17,7 +17,7 @@ export class  submit{
     companyName: string;
     tenderingProcessId: string;
     numberOfFits: 0;
-    winner: true;
+    winner: boolean;
   }
 
   export class sendToSubscribe{

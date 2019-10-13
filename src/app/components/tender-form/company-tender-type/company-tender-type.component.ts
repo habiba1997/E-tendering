@@ -140,25 +140,7 @@ export class CompanyTenderTypeComponent  implements OnInit{
     this.companiesId =[];
     this.companiesId.push(value);
     console.log(this.companiesId);
-
   }
 
-  // findByName(value): any
-  // {
-  //   let array = this.companies;
-  //   array.forEach(element => {
-      
-  //     if((element.name).valueOf()===value.valueOf()) 
-  //     {        
-  //       let str = element._id;
-  //               console.log(str)
-
-  //       return str;
-  //     }
-      
-  //   });
-  //   return "null"
-  
-  // }
 
 }

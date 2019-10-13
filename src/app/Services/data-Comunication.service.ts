@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { companyOpenComp, sendToSubscribe } from '../CustomData.ts/ directAndOpen';
+import { companyOpenComp, sendToSubscribe, submit } from '../CustomData.ts/ directAndOpen';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { UserNoPass, tender, CompanyTenders, TenderFile_Id } from '../CustomData.ts/User';
 
@@ -23,7 +23,7 @@ export class DataCommunicationService {
 
 
       
-    private dataSource= new BehaviorSubject( new sendToSubscribe);
+    private dataSource= new BehaviorSubject<Array<submit>>([]);
     dataSourceObject = this.dataSource.asObservable();
   
   
