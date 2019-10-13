@@ -9,7 +9,7 @@ import { DataCommunicationService } from 'src/app/Services/data-Comunication.ser
 })
 export class AgreedCompaniesComponent{
 Agreed =[];
-
+show:boolean = false;
   constructor(
     private http:HttpService,private dateservice:DataCommunicationService
 
@@ -19,17 +19,26 @@ Agreed =[];
      this.dateservice.dataSourceObject.subscribe(
       data=>
       {
+        if(!data[0])
+        {
+          this.show = true;
+        }
+        else
+        {
         data.forEach(element => {
-          this.Agreed.push({
-            "companyId": element.companyId,
-            "companyName": element.companyName,
-            "tenderingProcessId": element.tenderingProcessId,
-            "numberOfFits": element.numberOfFits,
-            "winner": false
-            
-          })
+              this.Agreed.push({
+                "companyId": element.companyId,
+                "companyName": element.companyName,
+                "tenderingProcessId": element.tenderingProcessId,
+                "numberOfFits": element.numberOfFits,
+                "winner": false
+                
+              })
 
-}); });
+            });
+        } 
+      
+      });
 
    }
 

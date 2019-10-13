@@ -58,16 +58,16 @@ export class HospitalTendersComponent implements OnInit {
  
     if(tender.Agreed ==  undefined)
     {
-      console.log("undefoned Tender");
-      alert("Sorry But No companies have submitted their Tenders YET")
+      alert("Sorry NO companies have submitted their Tenders YET")
     }
     else
     {
-      const submitObj = new submit;
-      let submitArray = [];
-      const arr = tender.Agreed;
+      // let submitArray = [];
+      // const arr = tender.Agreed;
       // for(var i =0; i < arr.length; i++)
       // {
+      
+      //   const submitObj = new submit;
 
       //   submitObj.companyId = arr[i].companyId;
       //   submitObj.companyName = arr[i].companyName;
@@ -87,7 +87,7 @@ export class HospitalTendersComponent implements OnInit {
 
     }
     
-         this.navigate.navigateTo("/agreed");
+    this.navigate.navigateTo("/agreed");
 
   }
 
