@@ -45,6 +45,10 @@ Direct:boolean;
           this.companiesSelected = object.companiesId;
           this.Open = object.open;
           this.Direct = object.direct;
+          
+    console.log("direct: "+ this.Direct);
+    console.log("open: "+ this.Open);
+
         });    
         this.Date = this.datePipe.transform(myDate, 'yyyy-MM-dd');
    }
@@ -87,8 +91,8 @@ this.http.postTender(JSON.stringify(this.obj())).subscribe(data=>
     },
       "startDate": this.Date,
       "deadlineDate": this.myDeadDate,
-     "Direct_Process": this.Open,
-      "Open_Process": this.Direct,
+     "Direct_Process": this.Direct,
+      "Open_Process": this.Open,
       "Companies_Selected":this.companiesSelected
     
     

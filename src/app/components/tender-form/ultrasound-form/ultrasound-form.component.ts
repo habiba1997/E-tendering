@@ -128,8 +128,8 @@ Submit() {
     },
       "startDate": this.Date,
       "deadlineDate": this.myDeadDate,
-     "Direct_Process": this.Open,
-      "Open_Process": this.Direct,
+     "Direct_Process": this.Direct,
+      "Open_Process": this.Open,
       "Companies_Selected":this.companiesSelected
     
     

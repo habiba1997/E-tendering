@@ -15,7 +15,8 @@ export class CompanyTenderTypeComponent  implements OnInit{
   Tendertype:string;
   DirectType:string;
   companySelected:string;
-
+  open: boolean;
+  direct:boolean;
   
   companies=[];
 
@@ -58,14 +59,17 @@ export class CompanyTenderTypeComponent  implements OnInit{
     {
       this.DirectType = "Direct";
       this.companiesId=[];
-
-    }else
+      this.open = false; this.direct = true;   
+    }
+    else
     {
       this.DirectType = "Undirect";
+      this.direct = false;
     }
+
   }
   onTenderOpenSelection(value)
-  {
+  {    
     if(value=="Open") 
     {
       this.companiesId=[];
@@ -74,26 +78,32 @@ export class CompanyTenderTypeComponent  implements OnInit{
       arr.forEach(element => {
         this.companiesId.push(element._id)
       });
+      this.open = true; this.direct = false;
     }
     else {
       this.Tendertype="Closed";
       this.companiesId=[];
+      this.open = false; this.direct = false;
     }
+    
   }
   submit()
   {
-    var open:boolean;
-    var direct : boolean;
-    if( this.Tendertype=="Open") open=true;
-    else open = false;
 
-    if( this.DirectType = "Direct") direct=true;
-    else direct = false;
+    console.log("direct: "+ this.direct);
+    console.log("open: "+ this.open);
 
+
+    if(this.direct == true && this.open == true)
+    {
+      alert('please choose carefully');
+      throw new Error('Something went wrong'); 
+      return 0;
+    }
 
     try{
       
-         this.dataCom.getCompanies(this.companiesId, direct, open);
+         this.dataCom.getCompanies(this.companiesId, this.direct, this.open);
          this.navigate.navigateTo("./tender-form")
 
     }
@@ -110,8 +120,10 @@ export class CompanyTenderTypeComponent  implements OnInit{
       this.companiesId.push(obj);
     }
     else{
+      console.log("checked: "+ checked+" obj: "+ obj);
       this.remove(this.companiesId,obj);
     }
+    console.log(this.companiesId);
   }
 
 
@@ -125,7 +137,10 @@ export class CompanyTenderTypeComponent  implements OnInit{
 
   onCompanySelection(value)
   {
+    this.companiesId =[];
     this.companiesId.push(value);
+    console.log(this.companiesId);
+
   }
 
   // findByName(value): any

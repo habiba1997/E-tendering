@@ -19,6 +19,7 @@ import { HospitalTendersComponent } from './components/hospital-tenders/hospital
 import { DiathermyFileComponent } from './components/tender-file/diathermy-file/diathermy-file.component';
 import { AgreedCompaniesComponent } from './components/agreed-companies/agreed-companies.component';
 import { UltrasoundFileComponent } from './components/tender-file/ultrasound-file/ultrasound-file.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 
 
@@ -127,6 +128,8 @@ export const RoutingComponents = [
     HospitalHomePageComponent,
     HospitalProfileComponent,
     AgreedCompaniesComponent,
-    UltrasoundFileComponent
-   
+    UltrasoundFileComponent,
+    HospitalTendersComponent,
+    DiathermyFileComponent,
+    LogoutComponent
   ];
