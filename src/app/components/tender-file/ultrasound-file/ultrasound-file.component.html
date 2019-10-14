@@ -8,26 +8,117 @@
         <div class="col-1"></div>
         <div class=" col-10 tender-frame" >
             <div style="margin: 30px 0px"><b> Physical &  Ergonomic Features </b></div>
-            <div  *ngFor="let feature of PhysicalandErgonomicFeatures" class="file" >    
-            <span >
-              {{feature}}  
+            <!-- 1 -->
+            <div  class="file" *ngIf="Contains('Room based wheeled unit')">    
+            <span  >
+                Room based wheeled unit
             </span>
             <div class="checks">
                
                 <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="check($event)" >
+                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample4" (change)="check($event)" >
                 <label class="radioLabel" for="defaultInline1">exist</label>
                 </div>
 
                 
                  <div class="custom-control custom-radio custom-control-inline">
-                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="notcheck($event)"  >
+                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample4" (change)="notcheck($event)"  >
                 <label class="radioLabel" for="defaultInline2">not exist</label>
                 </div>
             </div>
 
 
             </div>
+
+             <!-- 2 -->
+            <div  class="file" *ngIf="Contains('Slave Monitor')" >    
+                <span  >
+                    Slave Monitor
+                </span>
+                <div class="checks">
+                   
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample5" (change)="check($event)" >
+                    <label class="radioLabel" for="defaultInline1">exist</label>
+                    </div>
+    
+                    
+                     <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample5" (change)="notcheck($event)"  >
+                    <label class="radioLabel" for="defaultInline2">not exist</label>
+                    </div>
+                </div>
+    
+    
+                </div>
+
+                 <!-- 3 -->
+            <div  class="file" *ngIf="Contains('Flexible Position Monitor (height and angle)')">    
+                <span  >
+                    Flexible Position Monitor (height and angle)
+                </span>
+                <div class="checks">
+                   
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="check($event)" >
+                    <label class="radioLabel" for="defaultInline1">exist</label>
+                    </div>
+    
+                    
+                     <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="notcheck($event)"  >
+                    <label class="radioLabel" for="defaultInline2">not exist</label>
+                    </div>
+                </div>
+    
+    
+                </div>
+
+                 <!-- 4 -->
+            <div  class="file" *ngIf="Contains('Flexible position control console (height and angle)')" >    
+                <span  >
+                    Flexible position control console (height and angle)
+                </span>
+                <div class="checks">
+                   
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample7" (change)="check($event)" >
+                    <label class="radioLabel" for="defaultInline1">exist</label>
+                    </div>
+    
+                    
+                     <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample7" (change)="notcheck($event)"  >
+                    <label class="radioLabel" for="defaultInline2">not exist</label>
+                    </div>
+                </div>
+    
+    
+                </div>
+
+                 <!-- 5 -->
+            <div  class="file" *ngIf="Contains('Subdued console lighting')" >    
+                <span  >
+                    Subdued console lighting
+                </span>
+                <div class="checks">
+                   
+                    <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample8" (change)="check($event)" >
+                    <label class="radioLabel" for="defaultInline1">exist</label>
+                    </div>
+    
+                    
+                     <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample8" (change)="notcheck($event)"  >
+                    <label class="radioLabel" for="defaultInline2">not exist</label>
+                    </div>
+                </div>
+    
+    
+                </div>
+
+
 
 
 
@@ -64,13 +155,13 @@
         
                        
                         <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="check($event)" >
+                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample2" (change)="check($event)" >
                         <label class="radioLabel" for="defaultInline1">exist</label>
                         </div>
         
                         
                          <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample1" (change)="notcheck($event)"  >
+                        <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample2" (change)="notcheck($event)"  >
                         <label class="radioLabel" for="defaultInline2">not exist</label>
                         </div>
                     </div>
@@ -80,9 +171,9 @@
 
 
 
-                    <div class="file" >    
+                    <div class="file" *ngIf="FDA" >    
                             <span >
-                                   <b> FDACertified: </b> {{TenderSpecs.FDACertified}}  
+                                   <b> FDACertified: </b> {{FDA}}  
                 
                             </span>
                             <div class="checks">
@@ -90,13 +181,13 @@
                 
                                
                                 <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="check($event)" >
+                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample3" (change)="check($event)" >
                                 <label class="radioLabel" for="defaultInline1">exist</label>
                                 </div>
                 
                                 
                                  <div class="custom-control custom-radio custom-control-inline">
-                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample6" (change)="notcheck($event)" >
+                                <input type="radio" id="defaultInline1" name="inlineDefaultRadiosExample3" (change)="notcheck($event)" >
                                 <label class="radioLabel" for="defaultInline2">not exist</label>
                                 </div>
                             </div>

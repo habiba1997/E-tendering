@@ -41,11 +41,13 @@ export class TenderNotificationsComponent implements OnInit {
     this.allTenders=this.allTenders.filter(t => t._id !== noti._id);
     let deletiondata=JSON.stringify(
       {
-        CompanyUserId: this.company.id,
-        TenderingProcessId: noti._id
+        companyId: this.company.id,
+        tenderingProcessId: noti._id
       }
   );
+
   this.HttpService.RejectTender(deletiondata);
+  console.log("deleted data",deletiondata);
     
   
     console.log(this.allTenders);

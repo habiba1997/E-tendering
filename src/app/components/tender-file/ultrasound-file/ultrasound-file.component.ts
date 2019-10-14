@@ -11,7 +11,7 @@ import { isNull } from 'util';
 export class UltrasoundFileComponent implements OnInit {
 
 @Input () Tender:any;
-TenderSpecs:any;
+// TenderSpecs:any;
 Company:UserNoPass;
 companyData:any;
 NumofFits:number=0;
@@ -20,18 +20,22 @@ NumofFits:number=0;
   PhysicalandErgonomicFeatures=[];
   ScanModes=[];
   probs: string;
+  FDA:boolean;
 
   constructor(private httpService: HttpService ,private CompanyService: DataCommunicationService) { }
 
   ngOnInit() {
     console.log("From Ultrasound",this.Tender);
     //this.TenderSpecs=this.Tender.Device_Data;
-    console.log("tender Specs",this.TenderSpecs);
+    //console.log("tender Specs",this.TenderSpecs);
     
     this.PhysicalandErgonomicFeatures = this.Tender.Device_Data.PhysicalandErgonomicFeatures;
     
     this.ScanModes = this.Tender.Device_Data.ScanModes;
     this.probs = this.Tender.Device_Data.probs;
+    this.FDA=this.Tender.Device_Data.FDACertified;
+    console.log("FDA",this.Tender.Device_Data.FDACertified);
+    
     
     
     
@@ -77,6 +81,13 @@ NumofFits:number=0;
     });
     
     
+
+  }
+  Contains(Specs:string){
+    console.log(this.PhysicalandErgonomicFeatures.includes(Specs));
+    return this.PhysicalandErgonomicFeatures.includes(Specs);
+    
+
 
   }
 
