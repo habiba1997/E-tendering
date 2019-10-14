@@ -90,16 +90,16 @@ this.http.postTender(JSON.stringify(this.obj())).subscribe(data=>
             "CogPowerRange":this.CogPowerRange,
             "FDACertified":this.FDA
     },
-      "startDate": this.Date,
-      "deadlineDate": this.myDeadDate,
-     "Direct_Process": this.Direct,
-      "Open_Process": this.Open,
-      "Companies_Selected":this.companiesSelected
+        "startDate": this.Date,
+        "deadlineDate": this.myDeadDate,
+      "Direct_Process": this.Direct,
+        "Open_Process": this.Open,
+        "Companies_Selected":this.companiesSelected
     
     
     };
   }
-
+ 
 
 
 
