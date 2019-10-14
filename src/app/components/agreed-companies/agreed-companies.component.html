@@ -2,7 +2,8 @@
 
 <div style="margin: 30px">
 
-
+    <h2 *ngIf="show" style="padding: 10px; margin: 30px; display: block;
+    text-align: center;   font-weight: bold;" class="font text-danger">NO Companies Have Submitted Their Forms YET </h2>
 
 
     <ul  class="list-group">
@@ -20,6 +21,6 @@
         <button type="button" (click)="ThreeMostFit()"class="text-light btn btn-secondary bg-success btn-lg btn-block">Three Most Fit Companies</button>
 
 </div>
-
+<app-logout></app-logout>
 
 </div>

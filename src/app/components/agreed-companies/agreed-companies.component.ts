@@ -8,92 +8,37 @@ import { DataCommunicationService } from 'src/app/Services/data-Comunication.ser
   styleUrls: ['../../app.component.css']
 })
 export class AgreedCompaniesComponent{
-  
-  Agreed= [
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "companyName": "siemins",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 0,
-      "winner": false,   
-     },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "companyName": "siemins",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 4,
-      "winner": false,
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 14,
-      "companyName": "siemins",
-      "winner": false,
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 17,
-      "companyName": "siemins",
-      "winner": false,
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 70,
-      "companyName": "siemins",
-      "winner": false,
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d936dfee9c1e04deb3d7ea8",
-      "numberOfFits": 7,
-      "companyName": "siemins",
-      "winner": false,
-    }, {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d9327e0a25dd9158e325e5f",
-      "numberOfFits": 6,
-      "winner": false,
-      "companyName": "siemins"
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d9327e0a25dd9158e325e5f",
-      "numberOfFits": 27,
-      "winner": false,
-      "companyName": "Adam2"
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d9327e0a25dd9158e325e5f",
-      "numberOfFits": 5,
-      "winner": false,
-      "companyName": "WHatever"
-    },
-    {
-      "companyId": "5d81e9dbb635331fb81d1dec",
-      "tenderingProcessId": "5d943ce35c9ca815cdcb02db",
-      "numberOfFits": 3,
-      "winner": false,
-      "companyName": "siemins"
-    }
-    
-  ]
-
+Agreed =[];
+show:boolean = false;
   constructor(
     private http:HttpService,private dateservice:DataCommunicationService
 
   ) {
+     this.Agreed= [];
 
-// this.dateservice.dataSourceObject.subscribe(
-//   data=>
-//   {
-//      //this.Agreed = data;
-//      console.log(""dara7data);
-//   }
-// )
+     this.dateservice.dataSourceObject.subscribe(
+      data=>
+      {
+        if(!data[0])
+        {
+          this.show = true;
+        }
+        else
+        {
+        data.forEach(element => {
+              this.Agreed.push({
+                "companyId": element.companyId,
+                "companyName": element.companyName,
+                "tenderingProcessId": element.tenderingProcessId,
+                "numberOfFits": element.numberOfFits,
+                "winner": false
+                
+              })
+
+            });
+        } 
+      
+      });
 
    }
 
